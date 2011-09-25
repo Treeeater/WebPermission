@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/webkit/!svn/ver/95479/trunk/Source/WebCore/platform/graphics/ca/win
+END
+LayerChangesFlusher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repository/webkit/!svn/ver/95479/trunk/Source/WebCore/platform/graphics/ca/win/LayerChangesFlusher.cpp
+END
+PlatformCALayerWinInternal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repository/webkit/!svn/ver/94465/trunk/Source/WebCore/platform/graphics/ca/win/PlatformCALayerWinInternal.cpp
+END
+AbstractCACFLayerTreeHost.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repository/webkit/!svn/ver/82650/trunk/Source/WebCore/platform/graphics/ca/win/AbstractCACFLayerTreeHost.h
+END
+LegacyCACFLayerTreeHost.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repository/webkit/!svn/ver/76858/trunk/Source/WebCore/platform/graphics/ca/win/LegacyCACFLayerTreeHost.h
+END
+LayerChangesFlusher.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/webkit/!svn/ver/82650/trunk/Source/WebCore/platform/graphics/ca/win/LayerChangesFlusher.h
+END
+PlatformCALayerWin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repository/webkit/!svn/ver/84416/trunk/Source/WebCore/platform/graphics/ca/win/PlatformCALayerWin.cpp
+END
+WKCACFViewLayerTreeHost.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repository/webkit/!svn/ver/92068/trunk/Source/WebCore/platform/graphics/ca/win/WKCACFViewLayerTreeHost.cpp
+END
+PlatformCALayerWinInternal.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repository/webkit/!svn/ver/75985/trunk/Source/WebCore/platform/graphics/ca/win/PlatformCALayerWinInternal.h
+END
+PlatformCAAnimationWin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repository/webkit/!svn/ver/95479/trunk/Source/WebCore/platform/graphics/ca/win/PlatformCAAnimationWin.cpp
+END
+CACFLayerTreeHost.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/webkit/!svn/ver/85420/trunk/Source/WebCore/platform/graphics/ca/win/CACFLayerTreeHost.cpp
+END
+WKCACFViewLayerTreeHost.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repository/webkit/!svn/ver/76858/trunk/Source/WebCore/platform/graphics/ca/win/WKCACFViewLayerTreeHost.h
+END
+CACFLayerTreeHostClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repository/webkit/!svn/ver/76852/trunk/Source/WebCore/platform/graphics/ca/win/CACFLayerTreeHostClient.h
+END
+CACFLayerTreeHost.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repository/webkit/!svn/ver/82650/trunk/Source/WebCore/platform/graphics/ca/win/CACFLayerTreeHost.h
+END
+LegacyCACFLayerTreeHost.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repository/webkit/!svn/ver/80268/trunk/Source/WebCore/platform/graphics/ca/win/LegacyCACFLayerTreeHost.cpp
+END

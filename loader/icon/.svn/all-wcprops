@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repository/webkit/!svn/ver/95593/trunk/Source/WebCore/loader/icon
+END
+PageURLRecord.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/loader/icon/PageURLRecord.cpp
+END
+IconLoader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repository/webkit/!svn/ver/88682/trunk/Source/WebCore/loader/icon/IconLoader.cpp
+END
+IconDatabaseClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repository/webkit/!svn/ver/81824/trunk/Source/WebCore/loader/icon/IconDatabaseClient.h
+END
+IconController.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repository/webkit/!svn/ver/95593/trunk/Source/WebCore/loader/icon/IconController.h
+END
+IconDatabase.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repository/webkit/!svn/ver/92551/trunk/Source/WebCore/loader/icon/IconDatabase.h
+END
+PageURLRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/webkit/!svn/ver/83234/trunk/Source/WebCore/loader/icon/PageURLRecord.h
+END
+IconLoader.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/webkit/!svn/ver/88682/trunk/Source/WebCore/loader/icon/IconLoader.h
+END
+IconRecord.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/loader/icon/IconRecord.cpp
+END
+IconDatabaseBase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repository/webkit/!svn/ver/92551/trunk/Source/WebCore/loader/icon/IconDatabaseBase.cpp
+END
+IconRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/webkit/!svn/ver/83526/trunk/Source/WebCore/loader/icon/IconRecord.h
+END
+IconController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/webkit/!svn/ver/95593/trunk/Source/WebCore/loader/icon/IconController.cpp
+END
+IconDatabase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repository/webkit/!svn/ver/92551/trunk/Source/WebCore/loader/icon/IconDatabase.cpp
+END
+IconDatabaseBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/webkit/!svn/ver/92551/trunk/Source/WebCore/loader/icon/IconDatabaseBase.h
+END

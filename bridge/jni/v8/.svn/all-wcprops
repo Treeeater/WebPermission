@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repository/webkit/!svn/ver/92693/trunk/Source/WebCore/bridge/jni/v8
+END
+JNIUtilityPrivate.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repository/webkit/!svn/ver/92659/trunk/Source/WebCore/bridge/jni/v8/JNIUtilityPrivate.cpp
+END
+JavaValueV8.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/webkit/!svn/ver/82361/trunk/Source/WebCore/bridge/jni/v8/JavaValueV8.h
+END
+JNIUtilityPrivate.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/webkit/!svn/ver/92659/trunk/Source/WebCore/bridge/jni/v8/JNIUtilityPrivate.h
+END
+JavaMethodV8.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repository/webkit/!svn/ver/92659/trunk/Source/WebCore/bridge/jni/v8/JavaMethodV8.h
+END
+JavaFieldV8.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/webkit/!svn/ver/92659/trunk/Source/WebCore/bridge/jni/v8/JavaFieldV8.h
+END
+JavaNPObjectV8.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repository/webkit/!svn/ver/92681/trunk/Source/WebCore/bridge/jni/v8/JavaNPObjectV8.cpp
+END
+JavaInstanceV8.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/webkit/!svn/ver/92659/trunk/Source/WebCore/bridge/jni/v8/JavaInstanceV8.h
+END
+JavaNPObjectV8.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/webkit/!svn/ver/79998/trunk/Source/WebCore/bridge/jni/v8/JavaNPObjectV8.h
+END
+JavaClassV8.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/webkit/!svn/ver/82702/trunk/Source/WebCore/bridge/jni/v8/JavaClassV8.h
+END

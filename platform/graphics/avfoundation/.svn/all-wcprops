@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/webkit/!svn/ver/95104/trunk/Source/WebCore/platform/graphics/avfoundation
+END
+MediaPlayerPrivateAVFoundation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repository/webkit/!svn/ver/94302/trunk/Source/WebCore/platform/graphics/avfoundation/MediaPlayerPrivateAVFoundation.cpp
+END
+MediaPlayerPrivateAVFoundation.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repository/webkit/!svn/ver/93040/trunk/Source/WebCore/platform/graphics/avfoundation/MediaPlayerPrivateAVFoundation.h
+END

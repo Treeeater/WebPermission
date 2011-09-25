@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repository/webkit/!svn/ver/95535/trunk/Source/WebCore/websockets
+END
+ThreadableWebSocketChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/94482/trunk/Source/WebCore/websockets/ThreadableWebSocketChannel.h
+END
+ThreadableWebSocketChannelClientWrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repository/webkit/!svn/ver/95176/trunk/Source/WebCore/websockets/ThreadableWebSocketChannelClientWrapper.h
+END
+WebSocketHandshake.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/webkit/!svn/ver/93856/trunk/Source/WebCore/websockets/WebSocketHandshake.h
+END
+WebSocketHandshakeRequest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/websockets/WebSocketHandshakeRequest.cpp
+END
+WebSocketHandshakeRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/websockets/WebSocketHandshakeRequest.h
+END
+WebSocket.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/webkit/!svn/ver/94482/trunk/Source/WebCore/websockets/WebSocket.idl
+END
+WebSocketHandshakeResponse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/websockets/WebSocketHandshakeResponse.cpp
+END
+CloseEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repository/webkit/!svn/ver/93393/trunk/Source/WebCore/websockets/CloseEvent.h
+END
+WebSocketChannel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/webkit/!svn/ver/95535/trunk/Source/WebCore/websockets/WebSocketChannel.cpp
+END
+WebSocketHandshakeResponse.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/websockets/WebSocketHandshakeResponse.h
+END
+WebSocketChannelClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repository/webkit/!svn/ver/94041/trunk/Source/WebCore/websockets/WebSocketChannelClient.h
+END
+WebSocketChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/webkit/!svn/ver/94482/trunk/Source/WebCore/websockets/WebSocketChannel.h
+END
+WorkerThreadableWebSocketChannel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repository/webkit/!svn/ver/94482/trunk/Source/WebCore/websockets/WorkerThreadableWebSocketChannel.cpp
+END
+WebSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/webkit/!svn/ver/94482/trunk/Source/WebCore/websockets/WebSocket.cpp
+END
+WorkerThreadableWebSocketChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repository/webkit/!svn/ver/94482/trunk/Source/WebCore/websockets/WorkerThreadableWebSocketChannel.h
+END
+WebSocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repository/webkit/!svn/ver/94482/trunk/Source/WebCore/websockets/WebSocket.h
+END
+ThreadableWebSocketChannel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repository/webkit/!svn/ver/92116/trunk/Source/WebCore/websockets/ThreadableWebSocketChannel.cpp
+END
+ThreadableWebSocketChannelClientWrapper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repository/webkit/!svn/ver/95176/trunk/Source/WebCore/websockets/ThreadableWebSocketChannelClientWrapper.cpp
+END
+WebSocketHandshake.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/webkit/!svn/ver/91052/trunk/Source/WebCore/websockets/WebSocketHandshake.cpp
+END
+CloseEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repository/webkit/!svn/ver/93393/trunk/Source/WebCore/websockets/CloseEvent.idl
+END

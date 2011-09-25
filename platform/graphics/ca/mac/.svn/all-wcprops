@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/webkit/!svn/ver/92651/trunk/Source/WebCore/platform/graphics/ca/mac
+END
+PlatformCAAnimationMac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repository/webkit/!svn/ver/85036/trunk/Source/WebCore/platform/graphics/ca/mac/PlatformCAAnimationMac.mm
+END
+PlatformCALayerMac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/webkit/!svn/ver/92651/trunk/Source/WebCore/platform/graphics/ca/mac/PlatformCALayerMac.mm
+END

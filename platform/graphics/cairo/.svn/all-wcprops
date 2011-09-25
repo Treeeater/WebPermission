@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repository/webkit/!svn/ver/94897/trunk/Source/WebCore/platform/graphics/cairo
+END
+CairoUtilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/94876/trunk/Source/WebCore/platform/graphics/cairo/CairoUtilities.h
+END
+ImageCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/91914/trunk/Source/WebCore/platform/graphics/cairo/ImageCairo.cpp
+END
+FloatRectCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/cairo/FloatRectCairo.cpp
+END
+rgb24-hacks.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/cairo/rgb24-hacks.txt
+END
+FontCustomPlatformData.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repository/webkit/!svn/ver/80582/trunk/Source/WebCore/platform/graphics/cairo/FontCustomPlatformData.h
+END
+PlatformContextCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repository/webkit/!svn/ver/91914/trunk/Source/WebCore/platform/graphics/cairo/PlatformContextCairo.cpp
+END
+OwnPtrCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/80744/trunk/Source/WebCore/platform/graphics/cairo/OwnPtrCairo.cpp
+END
+TransformationMatrixCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/cairo/TransformationMatrixCairo.cpp
+END
+PathCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/85405/trunk/Source/WebCore/platform/graphics/cairo/PathCairo.cpp
+END
+GraphicsContext3DCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repository/webkit/!svn/ver/83745/trunk/Source/WebCore/platform/graphics/cairo/GraphicsContext3DCairo.cpp
+END
+GradientCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repository/webkit/!svn/ver/82962/trunk/Source/WebCore/platform/graphics/cairo/GradientCairo.cpp
+END
+PlatformContextCairo.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/webkit/!svn/ver/91914/trunk/Source/WebCore/platform/graphics/cairo/PlatformContextCairo.h
+END
+OwnPtrCairo.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/85405/trunk/Source/WebCore/platform/graphics/cairo/OwnPtrCairo.h
+END
+PlatformPathCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repository/webkit/!svn/ver/83945/trunk/Source/WebCore/platform/graphics/cairo/PlatformPathCairo.cpp
+END
+RefPtrCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/82890/trunk/Source/WebCore/platform/graphics/cairo/RefPtrCairo.cpp
+END
+DrawErrorUnderline.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repository/webkit/!svn/ver/84088/trunk/Source/WebCore/platform/graphics/cairo/DrawErrorUnderline.h
+END
+GraphicsContextCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repository/webkit/!svn/ver/94897/trunk/Source/WebCore/platform/graphics/cairo/GraphicsContextCairo.cpp
+END
+FontCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/91914/trunk/Source/WebCore/platform/graphics/cairo/FontCairo.cpp
+END
+PlatformPathCairo.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repository/webkit/!svn/ver/83945/trunk/Source/WebCore/platform/graphics/cairo/PlatformPathCairo.h
+END
+RefPtrCairo.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/80744/trunk/Source/WebCore/platform/graphics/cairo/RefPtrCairo.h
+END
+IntRectCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/89133/trunk/Source/WebCore/platform/graphics/cairo/IntRectCairo.cpp
+END
+scale-removal.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/cairo/scale-removal.txt
+END
+GraphicsContextPlatformPrivateCairo.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repository/webkit/!svn/ver/94897/trunk/Source/WebCore/platform/graphics/cairo/GraphicsContextPlatformPrivateCairo.h
+END
+OpenGLShims.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/92130/trunk/Source/WebCore/platform/graphics/cairo/OpenGLShims.cpp
+END
+CairoUtilities.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repository/webkit/!svn/ver/94876/trunk/Source/WebCore/platform/graphics/cairo/CairoUtilities.cpp
+END
+ImageBufferDataCairo.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/webkit/!svn/ver/83786/trunk/Source/WebCore/platform/graphics/cairo/ImageBufferDataCairo.h
+END
+ImageBufferCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repository/webkit/!svn/ver/91496/trunk/Source/WebCore/platform/graphics/cairo/ImageBufferCairo.cpp
+END
+PatternCairo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/cairo/PatternCairo.cpp
+END
+OpenGLShims.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/92130/trunk/Source/WebCore/platform/graphics/cairo/OpenGLShims.h
+END

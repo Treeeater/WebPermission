@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/webkit/!svn/ver/93459/trunk/Source/WebCore/platform/graphics/avfoundation/cf
+END
+MediaPlayerPrivateAVFoundationCF.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repository/webkit/!svn/ver/93459/trunk/Source/WebCore/platform/graphics/avfoundation/cf/MediaPlayerPrivateAVFoundationCF.cpp
+END
+MediaPlayerPrivateAVFoundationCF.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repository/webkit/!svn/ver/93219/trunk/Source/WebCore/platform/graphics/avfoundation/cf/MediaPlayerPrivateAVFoundationCF.h
+END
+AVFoundationCFSoftLinking.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repository/webkit/!svn/ver/93459/trunk/Source/WebCore/platform/graphics/avfoundation/cf/AVFoundationCFSoftLinking.h
+END
+CoreMediaSoftLinking.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repository/webkit/!svn/ver/93363/trunk/Source/WebCore/platform/graphics/avfoundation/cf/CoreMediaSoftLinking.h
+END

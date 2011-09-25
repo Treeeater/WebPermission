@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repository/webkit/!svn/ver/93988/trunk/Source/WebCore/platform/graphics/gpu
+END
+LoopBlinnConstants.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnConstants.h
+END
+Texture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/webkit/!svn/ver/87989/trunk/Source/WebCore/platform/graphics/gpu/Texture.cpp
+END
+LoopBlinnClassifier.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnClassifier.cpp
+END
+LoopBlinnPathCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repository/webkit/!svn/ver/78002/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnPathCache.h
+END
+LoopBlinnLocalTriangulator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnLocalTriangulator.cpp
+END
+Texture.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/webkit/!svn/ver/83960/trunk/Source/WebCore/platform/graphics/gpu/Texture.h
+END
+LoopBlinnClassifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repository/webkit/!svn/ver/78923/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnClassifier.h
+END
+Shader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repository/webkit/!svn/ver/82614/trunk/Source/WebCore/platform/graphics/gpu/Shader.cpp
+END
+LoopBlinnLocalTriangulator.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repository/webkit/!svn/ver/78923/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnLocalTriangulator.h
+END
+LoopBlinnPathProcessor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repository/webkit/!svn/ver/81230/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnPathProcessor.cpp
+END
+Shader.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/webkit/!svn/ver/77865/trunk/Source/WebCore/platform/graphics/gpu/Shader.h
+END
+LoopBlinnPathProcessor.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/webkit/!svn/ver/78264/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnPathProcessor.h
+END
+TilingData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repository/webkit/!svn/ver/92255/trunk/Source/WebCore/platform/graphics/gpu/TilingData.cpp
+END
+SharedGraphicsContext3D.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repository/webkit/!svn/ver/93625/trunk/Source/WebCore/platform/graphics/gpu/SharedGraphicsContext3D.cpp
+END
+LoopBlinnShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repository/webkit/!svn/ver/77865/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnShader.cpp
+END
+DrawingBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/93157/trunk/Source/WebCore/platform/graphics/gpu/DrawingBuffer.cpp
+END
+LoopBlinnSolidFillShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repository/webkit/!svn/ver/86067/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnSolidFillShader.cpp
+END
+TilingData.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repository/webkit/!svn/ver/93424/trunk/Source/WebCore/platform/graphics/gpu/TilingData.h
+END
+LoopBlinnMathUtils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repository/webkit/!svn/ver/87748/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnMathUtils.cpp
+END
+LoopBlinnTextureCoords.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnTextureCoords.cpp
+END
+LoopBlinnShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/77865/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnShader.h
+END
+SharedGraphicsContext3D.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repository/webkit/!svn/ver/93013/trunk/Source/WebCore/platform/graphics/gpu/SharedGraphicsContext3D.h
+END
+LoopBlinnSolidFillShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repository/webkit/!svn/ver/77865/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnSolidFillShader.h
+END
+DrawingBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/93988/trunk/Source/WebCore/platform/graphics/gpu/DrawingBuffer.h
+END
+LoopBlinnTextureCoords.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnTextureCoords.h
+END
+LoopBlinnMathUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repository/webkit/!svn/ver/82614/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnMathUtils.h
+END
+LoopBlinnPathCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repository/webkit/!svn/ver/78002/trunk/Source/WebCore/platform/graphics/gpu/LoopBlinnPathCache.cpp
+END

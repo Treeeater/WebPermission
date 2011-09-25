@@ -1,0 +1,245 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repository/webkit/!svn/ver/95486/trunk/Source/WebCore/WebCore.vcproj
+END
+WebCoreCairo.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repository/webkit/!svn/ver/90940/trunk/Source/WebCore/WebCore.vcproj/WebCoreCairo.vsprops
+END
+WebCorePreBuild.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repository/webkit/!svn/ver/82861/trunk/Source/WebCore/WebCore.vcproj/WebCorePreBuild.cmd
+END
+WebCoreQuartzCore.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/76370/trunk/Source/WebCore/WebCore.vcproj/WebCoreQuartzCore.vsprops
+END
+QTMovieWinReleaseCairoCFLite.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repository/webkit/!svn/ver/82512/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinReleaseCairoCFLite.vsprops
+END
+WebCore.submit.sln
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/webkit/!svn/ver/82477/trunk/Source/WebCore/WebCore.vcproj/WebCore.submit.sln
+END
+QTMovieWinDebug.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/82304/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinDebug.vsprops
+END
+QTMovieWinProduction.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repository/webkit/!svn/ver/82512/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinProduction.vsprops
+END
+WebCoreTestSupport.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/88159/trunk/Source/WebCore/WebCore.vcproj/WebCoreTestSupport.vcproj
+END
+QTMovieWinCommon.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/78045/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinCommon.vsprops
+END
+migrate-scripts.sh
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/WebCore.vcproj/migrate-scripts.sh
+END
+QTMovieWinDebugCairoCFLite.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repository/webkit/!svn/ver/82304/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinDebugCairoCFLite.vsprops
+END
+WebCoreGeneratedCommon.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repository/webkit/!svn/ver/84192/trunk/Source/WebCore/WebCore.vcproj/WebCoreGeneratedCommon.vsprops
+END
+QTMovieWinPostBuild.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/80375/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinPostBuild.cmd
+END
+WebCoreGeneratedCairo.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repository/webkit/!svn/ver/84192/trunk/Source/WebCore/WebCore.vcproj/WebCoreGeneratedCairo.vsprops
+END
+WebCoreRelease.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/82512/trunk/Source/WebCore/WebCore.vcproj/WebCoreRelease.vsprops
+END
+WebCore.make
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/webkit/!svn/ver/82493/trunk/Source/WebCore/WebCore.vcproj/WebCore.make
+END
+QTMovieWin.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repository/webkit/!svn/ver/82477/trunk/Source/WebCore/WebCore.vcproj/QTMovieWin.vcproj
+END
+WebCoreMediaQT.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/93363/trunk/Source/WebCore/WebCore.vcproj/WebCoreMediaQT.vsprops
+END
+WebCoreReleaseCairoCFLite.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repository/webkit/!svn/ver/82512/trunk/Source/WebCore/WebCore.vcproj/WebCoreReleaseCairoCFLite.vsprops
+END
+WebCoreDebug.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repository/webkit/!svn/ver/82304/trunk/Source/WebCore/WebCore.vcproj/WebCoreDebug.vsprops
+END
+WebCoreProduction.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/82512/trunk/Source/WebCore/WebCore.vcproj/WebCoreProduction.vsprops
+END
+WebCoreCommon.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repository/webkit/!svn/ver/90269/trunk/Source/WebCore/WebCore.vcproj/WebCoreCommon.vsprops
+END
+WebCoreDebugCairoCFLite.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/webkit/!svn/ver/90940/trunk/Source/WebCore/WebCore.vcproj/WebCoreDebugCairoCFLite.vsprops
+END
+QTMovieWinDebugAll.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repository/webkit/!svn/ver/82304/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinDebugAll.vsprops
+END
+WebCorePostBuild.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/WebCore.vcproj/WebCorePostBuild.cmd
+END
+WebCore.sln
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repository/webkit/!svn/ver/82477/trunk/Source/WebCore/WebCore.vcproj/WebCore.sln
+END
+WebCoreCFNetwork.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/WebCore.vcproj/WebCoreCFNetwork.vsprops
+END
+WebCoreCURL.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/WebCore.vcproj/WebCoreCURL.vsprops
+END
+WebCore.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/webkit/!svn/ver/95486/trunk/Source/WebCore/WebCore.vcproj/WebCore.vcproj
+END
+copyForwardingHeaders.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/94452/trunk/Source/WebCore/WebCore.vcproj/copyForwardingHeaders.cmd
+END
+QTMovieWinPreBuild.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/80375/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinPreBuild.cmd
+END
+WebCorePthreads.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/WebCore.vcproj/WebCorePthreads.vsprops
+END
+MigrateScripts
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/webkit/!svn/ver/86936/trunk/Source/WebCore/WebCore.vcproj/MigrateScripts
+END
+WebCoreDebugAll.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/82304/trunk/Source/WebCore/WebCore.vcproj/WebCoreDebugAll.vsprops
+END
+build-generated-files.sh
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/75376/trunk/Source/WebCore/WebCore.vcproj/build-generated-files.sh
+END
+WebCoreGenerated.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/84192/trunk/Source/WebCore/WebCore.vcproj/WebCoreGenerated.vcproj
+END
+WebCoreCG.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/WebCore.vcproj/WebCoreCG.vsprops
+END
+xcopy.excludes
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/webkit/!svn/ver/75314/trunk/Source/WebCore/WebCore.vcproj/xcopy.excludes
+END
+QTMovieWinRelease.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/webkit/!svn/ver/82512/trunk/Source/WebCore/WebCore.vcproj/QTMovieWinRelease.vsprops
+END
+copyWebCoreResourceFiles.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repository/webkit/!svn/ver/84192/trunk/Source/WebCore/WebCore.vcproj/copyWebCoreResourceFiles.cmd
+END

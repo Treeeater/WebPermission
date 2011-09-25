@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/webkit/!svn/ver/86406/trunk/Source/WebCore/manual-tests/autocorrection
+END
+move-to-end-of-word-to-show-reversion.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repository/webkit/!svn/ver/86406/trunk/Source/WebCore/manual-tests/autocorrection/move-to-end-of-word-to-show-reversion.html
+END
+type-whitespace-to-dismiss-reversion.html
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repository/webkit/!svn/ver/80023/trunk/Source/WebCore/manual-tests/autocorrection/type-whitespace-to-dismiss-reversion.html
+END
+document-for-iframe-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repository/webkit/!svn/ver/80408/trunk/Source/WebCore/manual-tests/autocorrection/document-for-iframe-test.html
+END
+dismiss-multiple-guesses.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repository/webkit/!svn/ver/77577/trunk/Source/WebCore/manual-tests/autocorrection/dismiss-multiple-guesses.html
+END
+autocorrection-contraction.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repository/webkit/!svn/ver/80226/trunk/Source/WebCore/manual-tests/autocorrection/autocorrection-contraction.html
+END
+close-window-when-correction-is-shown.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repository/webkit/!svn/ver/81847/trunk/Source/WebCore/manual-tests/autocorrection/close-window-when-correction-is-shown.html
+END
+select-from-multiple-guesses.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repository/webkit/!svn/ver/77577/trunk/Source/WebCore/manual-tests/autocorrection/select-from-multiple-guesses.html
+END
+spellcheck-on-contraction-when-autocorrection-is-off.html
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repository/webkit/!svn/ver/79411/trunk/Source/WebCore/manual-tests/autocorrection/spellcheck-on-contraction-when-autocorrection-is-off.html
+END
+autocorrection-cancelled-by-typing-1.html
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repository/webkit/!svn/ver/77577/trunk/Source/WebCore/manual-tests/autocorrection/autocorrection-cancelled-by-typing-1.html
+END
+autocorrection-cancelled-by-ESC.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repository/webkit/!svn/ver/77577/trunk/Source/WebCore/manual-tests/autocorrection/autocorrection-cancelled-by-ESC.html
+END
+continue-typing-to-dismiss-reversion.html
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repository/webkit/!svn/ver/77577/trunk/Source/WebCore/manual-tests/autocorrection/continue-typing-to-dismiss-reversion.html
+END
+remove-misspelling-marker-after-appending-letter.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repository/webkit/!svn/ver/84448/trunk/Source/WebCore/manual-tests/autocorrection/remove-misspelling-marker-after-appending-letter.html
+END
+spell-checking-after-reversion.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repository/webkit/!svn/ver/86295/trunk/Source/WebCore/manual-tests/autocorrection/spell-checking-after-reversion.html
+END
+undo-autocorrection.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repository/webkit/!svn/ver/78632/trunk/Source/WebCore/manual-tests/autocorrection/undo-autocorrection.html
+END
+autocorrection-in-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repository/webkit/!svn/ver/80408/trunk/Source/WebCore/manual-tests/autocorrection/autocorrection-in-iframe.html
+END
+delete-to-dismiss-reversion.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repository/webkit/!svn/ver/77577/trunk/Source/WebCore/manual-tests/autocorrection/delete-to-dismiss-reversion.html
+END
+delete-to-end-of-word-to-show-reversion.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/repository/webkit/!svn/ver/86406/trunk/Source/WebCore/manual-tests/autocorrection/delete-to-end-of-word-to-show-reversion.html
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb
+END
+LevelDBWriteBatch.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBWriteBatch.h
+END
+LevelDBDatabase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBDatabase.cpp
+END
+LevelDBSlice.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBSlice.h
+END
+LevelDBTransaction.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBTransaction.cpp
+END
+LevelDBDatabase.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBDatabase.h
+END
+LevelDBTransaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBTransaction.h
+END
+LevelDBComparator.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBComparator.h
+END
+LevelDBWriteBatch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBWriteBatch.cpp
+END
+LevelDBIterator.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repository/webkit/!svn/ver/95373/trunk/Source/WebCore/platform/leveldb/LevelDBIterator.h
+END

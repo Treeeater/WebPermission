@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repository/webkit/!svn/ver/93594/trunk/Source/WebCore/gyp
+END
+copy-inspector-resources.sh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/webkit/!svn/ver/81706/trunk/Source/WebCore/gyp/copy-inspector-resources.sh
+END
+gtk.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repository/webkit/!svn/ver/83225/trunk/Source/WebCore/gyp/gtk.gyp
+END
+WebCore.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repository/webkit/!svn/ver/93594/trunk/Source/WebCore/gyp/WebCore.gyp
+END
+generate-derived-sources.sh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/webkit/!svn/ver/84900/trunk/Source/WebCore/gyp/generate-derived-sources.sh
+END
+run-if-exists.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repository/webkit/!svn/ver/81708/trunk/Source/WebCore/gyp/run-if-exists.sh
+END
+generate-webcore-export-file-generator.sh
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repository/webkit/!svn/ver/81623/trunk/Source/WebCore/gyp/generate-webcore-export-file-generator.sh
+END
+copy-forwarding-and-icu-headers.sh
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repository/webkit/!svn/ver/81695/trunk/Source/WebCore/gyp/copy-forwarding-and-icu-headers.sh
+END
+update-info-plist.sh
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repository/webkit/!svn/ver/81708/trunk/Source/WebCore/gyp/update-info-plist.sh
+END
+streamline-inspector-source.sh
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repository/webkit/!svn/ver/84626/trunk/Source/WebCore/gyp/streamline-inspector-source.sh
+END
