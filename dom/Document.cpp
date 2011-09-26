@@ -517,6 +517,10 @@ Document::Document(Frame* frame, const KURL& url, bool isXHTML, bool isHTML)
 
     static int docID = 0;
     m_docID = docID++;
+	//initialize the file handler to log third party scripts' behavior:
+	m_thirdPartyLogHandle.open("thirdPartyLog.txt");
+	m_thirdPartyLogHandle << (url.string().ascii().data()) << " :" << endl;
+
 #if ENABLE(XHTMLMP)
     m_shouldProcessNoScriptElement = !(m_frame && m_frame->script()->canExecuteScripts(NotAboutToExecuteScript));
 #endif
@@ -580,6 +584,13 @@ Document::~Document()
 
     if (m_mediaQueryMatcher)
         m_mediaQueryMatcher->documentDestroyed();
+
+	m_thirdPartyLogHandle.close();
+}
+
+void Document::writeThirdPartyLog(String str)
+{
+	m_thirdPartyLogHandle << str.ascii().data() << endl;
 }
 
 void Document::removedLastRef()

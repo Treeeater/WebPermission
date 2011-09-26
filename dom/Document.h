@@ -44,6 +44,7 @@
 #include "Timer.h"
 #include "TreeScope.h"
 #include "ViewportArguments.h"
+#include <fstream>
 #include <wtf/Deque.h>
 #include <wtf/FixedArray.h>
 #include <wtf/OwnPtr.h>
@@ -1097,6 +1098,9 @@ public:
     void didAddWheelEventHandler();
     void didRemoveWheelEventHandler();
     
+	//writer for third party script's behavior log:
+	void writeThirdPartyLog(String str);
+
 protected:
     Document(Frame*, const KURL&, bool isXHTML, bool isHTML);
 
@@ -1407,6 +1411,8 @@ private:
 #endif
 
     RefPtr<ContentSecurityPolicy> m_contentSecurityPolicy;
+	//log file for recording third party scripts access:
+	std::ofstream m_thirdPartyLogHandle;
 };
 
 // Put these methods here, because they require the Document definition, but we really want to inline them.

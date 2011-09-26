@@ -36,6 +36,7 @@
 #include "V8Binding.h"
 #include "V8Node.h"
 #include "V8Proxy.h"
+#include "V8IsolatedContext.h"
 #include <v8.h>
 
 namespace WebCore {
@@ -46,6 +47,46 @@ template<class T> static v8::Handle<v8::Value> getV8Object(T* implementation)
 {
     if (!implementation)
         return v8::Handle<v8::Value>();
+    return toV8(implementation);
+}
+
+template <> static v8::Handle<v8::Value> getV8Object(Node* implementation)
+{
+    if (!implementation)
+        return v8::Handle<v8::Value>();	
+	
+	/* document.getElementByTagsName, all other index accesses go here.
+	mediate to record the xpath of the accessed node and accessor*/
+	//'origin' is the current thirdPartyId.
+	String origin = V8IsolatedContext::getThirdPartyId();
+	if ((origin != "")&&(origin != 0))
+	{
+		//This is from a thirdParty script, we want to record it.
+		String nodeInfo = "";
+		Node* currentNode = implementation;
+		char buff[5];			//assume the index of a node cannot exceed 10000
+		while (currentNode!=0)
+		{
+			nodeInfo.append(currentNode->nodeName());
+			int index = -1;		//initalize to -1 to start the index from 0
+			Node *indexNode = currentNode;
+			while (indexNode!=0)
+			{
+				if (!indexNode->isTextNode()) index ++;
+				indexNode = indexNode->previousSibling();
+			}
+			if (index>9999) index = 9999;	//assume the index of a node cannot exceed 10000
+			nodeInfo.append("[");
+			itoa(index,buff,10);
+			nodeInfo.append(buff);
+			nodeInfo.append("]/");
+			currentNode = currentNode->parentNode();
+		}
+		nodeInfo.append(" is accesed by ");
+		nodeInfo.append(origin);
+		//write the log to disk.
+		implementation->document()->writeThirdPartyLog(nodeInfo);
+	}
     return toV8(implementation);
 }
 

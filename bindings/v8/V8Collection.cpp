@@ -59,4 +59,5 @@ v8::Handle<v8::Value> toOptionsCollectionSetter(uint32_t index, v8::Handle<v8::V
     return value;
 }
 
+
 } // namespace WebCore

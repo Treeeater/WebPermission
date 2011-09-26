@@ -44,6 +44,7 @@
 #include "V8BindingState.h"
 #include "V8HTMLElement.h"
 #include "V8Proxy.h"
+#include "V8IsolatedContext.h"
 
 #if ENABLE(SVG)
 #include "V8SVGElement.h"
@@ -57,6 +58,40 @@ v8::Handle<v8::Value> toV8(Element* impl, bool forceNewObject)
 {
     if (!impl)
         return v8::Null();
+
+	/* document.getElementByTagsName, all other index accesses go here.
+	mediate to record the xpath of the accessed node and accessor*/
+	//'origin' is the current thirdPartyId.
+	String origin = V8IsolatedContext::getThirdPartyId();
+	if ((origin != "")&&(origin != 0))
+	{
+		//This is from a thirdParty script, we want to record it.
+		String nodeInfo = "";
+		Node* currentNode = impl;
+		char buff[5];			//assume the index of a node cannot exceed 10000
+		while (currentNode!=0)
+		{
+			nodeInfo.append(currentNode->nodeName());
+			int index = -1;		//initalize to -1 to start the index from 0
+			Node *indexNode = currentNode;
+			while (indexNode!=0)
+			{
+				if (!indexNode->isTextNode()) index ++;
+				indexNode = indexNode->previousSibling();
+			}
+			if (index>9999) index = 9999;	//assume the index of a node cannot exceed 10000
+			nodeInfo.append("[");
+			itoa(index,buff,10);
+			nodeInfo.append(buff);
+			nodeInfo.append("]/");
+			currentNode = currentNode->parentNode();
+		}
+		nodeInfo.append(" is accesed by ");
+		nodeInfo.append(origin);
+		//write the log to disk.
+		impl->document()->writeThirdPartyLog(nodeInfo);
+	}
+
     if (impl->isHTMLElement())
         return toV8(toHTMLElement(impl), forceNewObject);
 #if ENABLE(SVG)
