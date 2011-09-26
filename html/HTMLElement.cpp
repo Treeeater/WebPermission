@@ -47,6 +47,7 @@
 #include "Text.h"
 #include "TextIterator.h"
 #include "markup.h"
+#include "V8IsolatedContext.h"
 #include <wtf/StdLibExtras.h>
 #include <wtf/text/CString.h>
 

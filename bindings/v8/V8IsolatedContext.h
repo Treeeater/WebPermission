@@ -59,7 +59,7 @@ class V8IsolatedContext {
 public:
     // Creates an isolated world. To destroy it, call destroy().
     // This will delete the isolated world when the context it owns is GC'd.
-    V8IsolatedContext(V8Proxy*, int extensionGroup, int worldId);
+    V8IsolatedContext(V8Proxy*, int extensionGroup, int worldId, String thirdPartyId="");
     ~V8IsolatedContext();
 
     // Call this to destroy the isolated world. It will be deleted sometime
@@ -97,6 +97,10 @@ public:
     SecurityOrigin* securityOrigin() const { return m_securityOrigin.get(); }
     void setSecurityOrigin(PassRefPtr<SecurityOrigin>);
 
+	static void setThirdPartyId(String id) { thirdPartyId = id;}
+	static String getThirdPartyId() { return thirdPartyId; }
+
+
 private:
     static v8::Handle<v8::Object> getGlobalObject(v8::Handle<v8::Context> context)
     {
@@ -116,6 +120,8 @@ private:
     RefPtr<SecurityOrigin> m_securityOrigin;
 
     Frame* m_frame;
+
+	static String thirdPartyId;
 };
 
 } // namespace WebCore

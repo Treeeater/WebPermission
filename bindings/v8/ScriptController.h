@@ -83,7 +83,7 @@ public:
     // Evaluate a script file in the environment of this proxy.
     // If succeeded, 'succ' is set to true and result is returned
     // as a string.
-    ScriptValue evaluate(const ScriptSourceCode&);
+    ScriptValue evaluate(const ScriptSourceCode&, String thirdPartyId = "");
 
     void evaluateInIsolatedWorld(unsigned worldID, const Vector<ScriptSourceCode>&);
 

@@ -282,6 +282,7 @@ void ScriptElement::executeScript(const ScriptSourceCode& sourceCode)
         return;
 
     RefPtr<Document> document = m_element->document();
+	String thirdPartyId = m_element->getAttribute("thirdPartyId");
     ASSERT(document);
     if (Frame* frame = document->frame()) {
         {
@@ -289,7 +290,7 @@ void ScriptElement::executeScript(const ScriptSourceCode& sourceCode)
             // Create a script from the script element node, using the script
             // block's source and the script block's type.
             // Note: This is where the script is compiled and actually executed.
-            frame->script()->evaluate(sourceCode);
+            frame->script()->evaluate(sourceCode, thirdPartyId);
         }
 
         Document::updateStyleForAllDocuments();

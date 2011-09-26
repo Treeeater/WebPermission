@@ -58,6 +58,7 @@
 #include "V8Location.h"
 #include "V8Proxy.h"
 #include "WorkerContextExecutionProxy.h"
+#include "V8IsolatedContext.h"
 
 #include <algorithm>
 #include <stdio.h>
@@ -304,7 +305,6 @@ bool V8DOMWindowShell::initContextIfNeeded()
 
         isV8Initialized = true;
     }
-
     m_context = createNewContext(m_global, 0);
     if (m_context.IsEmpty())
         return false;

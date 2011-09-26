@@ -173,13 +173,14 @@ void ScriptController::setIsolatedWorldSecurityOrigin(int worldID, PassRefPtr<Se
 }
 
 // Evaluate a script file in the environment of this proxy.
-ScriptValue ScriptController::evaluate(const ScriptSourceCode& sourceCode)
+ScriptValue ScriptController::evaluate(const ScriptSourceCode& sourceCode, String thirdPartyId)
 {
     String sourceURL = sourceCode.url();
     const String* savedSourceURL = m_sourceURL;
     m_sourceURL = &sourceURL;
-
+	String oldThirdPartyId = "";
     v8::HandleScope handleScope;
+	
     v8::Handle<v8::Context> v8Context = V8Proxy::mainWorldContext(m_proxy->frame());
     if (v8Context.IsEmpty())
         return ScriptValue();
@@ -187,6 +188,23 @@ ScriptValue ScriptController::evaluate(const ScriptSourceCode& sourceCode)
     v8::Context::Scope scope(v8Context);
 
     RefPtr<Frame> protect(m_frame);
+/*
+	V8IsolatedContext* isolatedContext = 0;
+	if (V8IsolatedContext::getEntered() == 0)
+	{
+		//create isolated context on first run
+		isolatedContext = new V8IsolatedContext(m_proxy.get(), 1, 0, thirdPartyId);
+	}*/
+	if (thirdPartyId!=0)
+	{
+		oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
+		V8IsolatedContext::setThirdPartyId(thirdPartyId);
+	}
+	else
+	{
+		oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
+		V8IsolatedContext::setThirdPartyId("");
+	}
 
     v8::Local<v8::Value> object = m_proxy->evaluate(sourceCode, 0);
 
@@ -195,6 +213,7 @@ ScriptValue ScriptController::evaluate(const ScriptSourceCode& sourceCode)
     if (object.IsEmpty())
         return ScriptValue();
 
+	V8IsolatedContext::setThirdPartyId(oldThirdPartyId);
     return ScriptValue(object);
 }
 

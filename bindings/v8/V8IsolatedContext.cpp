@@ -40,6 +40,7 @@
 
 namespace WebCore {
 
+String V8IsolatedContext::thirdPartyId = "";
 
 void V8IsolatedContext::contextWeakReferenceCallback(v8::Persistent<v8::Value> object, void* isolatedContext)
 {
@@ -48,7 +49,7 @@ void V8IsolatedContext::contextWeakReferenceCallback(v8::Persistent<v8::Value> o
     delete context;
 }
 
-V8IsolatedContext::V8IsolatedContext(V8Proxy* proxy, int extensionGroup, int worldId)
+V8IsolatedContext::V8IsolatedContext(V8Proxy* proxy, int extensionGroup, int worldId, String thirdPartyId)
     : m_world(IsolatedWorld::create(worldId)),
       m_frame(proxy->frame())
 {
