@@ -1,0 +1,1 @@
+setTimeout("var test = document.getElementById('secret').innerHTML; var a = test + 'test';",1000);

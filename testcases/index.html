@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+<div id = "secret">secret</div>
+<div id = "public">public</div>
+<div id = "secret2">secret2</div>
+<!-- iframe (multiple document case)
+<iframe src="iframe.html"></iframe> -->
+</body>
+<!-- normal cases: getElementById taint source
+<script src="test.js" thirdPartyId="test"></script> -->
+<!-- host scripts in between third party scripts
+<script src="host.js"></script>-->
+<!-- second third party scripts: Collector getter and getElementsByTagName 
+<script src="test2.js" thirdPartyId="test2"></script>-->
+<!-- eval cases -->
+<script src="eval.js" thirdPartyId="test_eval"></script>
+<!-- setTimeout cases -->
+<script src="setTimeout.js" thirdPartyId="test_setTimeout"></script>
+</html>
