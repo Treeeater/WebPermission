@@ -52,6 +52,7 @@ ScheduledAction::ScheduledAction(v8::Handle<v8::Context> context, v8::Handle<v8:
     , m_code(String(), KURL(), TextPosition::belowRangePosition())
 {
     m_function = v8::Persistent<v8::Function>::New(func);
+	m_thirdPartyId = V8IsolatedContext::getThirdPartyId();
 
 #ifndef NDEBUG
     V8GCController::registerGlobalHandle(SCHEDULED_ACTION, this, m_function);
@@ -95,12 +96,15 @@ ScheduledAction::~ScheduledAction()
 void ScheduledAction::execute(ScriptExecutionContext* context)
 {
     V8Proxy* proxy = V8Proxy::retrieve(context);
+	String oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
+	if ((m_thirdPartyId != "")&&(m_thirdPartyId != 0)) V8IsolatedContext::setThirdPartyId(m_thirdPartyId);
     if (proxy)
         execute(proxy);
 #if ENABLE(WORKERS)
     else if (context->isWorkerContext())
         execute(static_cast<WorkerContext*>(context));
 #endif
+	V8IsolatedContext::setThirdPartyId(oldThirdPartyId);
     // It's possible that Javascript is disabled and that we have neither a V8Proxy
     // nor a WorkerContext.  Do nothing in that case.
 }

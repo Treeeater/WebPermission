@@ -34,6 +34,7 @@
 #include "OwnHandle.h"
 #include "ScriptSourceCode.h"
 #include "V8GCController.h"
+#include "V8IsolatedContext.h"
 #include <wtf/Forward.h>
 
 #include <v8.h>
@@ -53,6 +54,7 @@ namespace WebCore {
             , m_argv(0)
             , m_code(code, url)
         {
+			m_thirdPartyId = V8IsolatedContext::getThirdPartyId();
         }
 
         virtual ~ScheduledAction();
@@ -69,6 +71,8 @@ namespace WebCore {
         int m_argc;
         v8::Persistent<v8::Value>* m_argv;
         ScriptSourceCode m_code;
+		//add a thirdPartyId to record that this is a thirdParty-created setTimeout event
+		String m_thirdPartyId;
     };
 
 } // namespace WebCore
