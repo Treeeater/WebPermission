@@ -42,7 +42,7 @@
 
 namespace WebCore {
 
-V8LazyEventListener::V8LazyEventListener(const String& functionName, bool isSVGEvent, const String& code, const String sourceURL, const TextPosition& position, const WorldContextHandle& worldContext)
+V8LazyEventListener::V8LazyEventListener(const String& functionName, bool isSVGEvent, const String& code, const String sourceURL, const TextPosition& position, const WorldContextHandle& worldContext, String tpid)
     : V8AbstractEventListener(true, worldContext)
     , m_functionName(functionName)
     , m_isSVGEvent(isSVGEvent)
@@ -50,6 +50,7 @@ V8LazyEventListener::V8LazyEventListener(const String& functionName, bool isSVGE
     , m_sourceURL(sourceURL)
     , m_position(position)
 {
+	this->setThirdPartyId(tpid);
 }
 
 v8::Local<v8::Value> V8LazyEventListener::callListenerFunction(ScriptExecutionContext* context, v8::Handle<v8::Value> jsEvent, Event* event)

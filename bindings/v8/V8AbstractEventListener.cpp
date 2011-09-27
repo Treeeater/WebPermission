@@ -43,6 +43,7 @@
 #include "V8Utilities.h"
 #include "WorkerContext.h"
 #include "WorkerContextExecutionProxy.h"
+#include "V8IsolatedContext.h"
 
 namespace WebCore {
 
@@ -93,7 +94,6 @@ void V8AbstractEventListener::handleEvent(ScriptExecutionContext* context, Event
     // Get the V8 wrapper for the event object.
     v8::Handle<v8::Value> jsEvent = toV8(event);
     ASSERT(!jsEvent.IsEmpty());
-
     invokeEventHandler(context, event, jsEvent);
 }
 
@@ -149,7 +149,11 @@ void V8AbstractEventListener::invokeEventHandler(ScriptExecutionContext* context
         v8Context->Global()->SetHiddenValue(eventSymbol, jsEvent);
         tryCatch.Reset();
 
+		String oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
+		V8IsolatedContext::setThirdPartyId(this->getThirdPartyId());
         returnValue = callListenerFunction(context, jsEvent, event);
+		V8IsolatedContext::setThirdPartyId(oldThirdPartyId);
+
         if (tryCatch.HasCaught())
             event->target()->uncaughtExceptionInEventHandler();
 

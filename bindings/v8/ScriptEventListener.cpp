@@ -62,7 +62,7 @@ PassRefPtr<V8LazyEventListener> createAttributeEventListener(Node* node, Attribu
         sourceURL = node->document()->url().string();
     }
 
-    return V8LazyEventListener::create(attr->localName().string(), node->isSVGElement(), attr->value(), sourceURL, position, WorldContextHandle(UseMainWorld));
+    return V8LazyEventListener::create(attr->localName().string(), node->isSVGElement(), attr->value(), sourceURL, position, WorldContextHandle(UseMainWorld), attr->getThirdPartyId());
 }
 
 PassRefPtr<V8LazyEventListener> createAttributeEventListener(Frame* frame, Attribute* attr)

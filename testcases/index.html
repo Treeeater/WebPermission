@@ -8,14 +8,27 @@
 <!-- iframe (multiple document case)
 <iframe src="iframe.html"></iframe> -->
 </body>
+<!------------------------------------------------------------------>
 <!-- normal cases: getElementById taint source
 <script src="test.js" thirdPartyId="test"></script> -->
 <!-- host scripts in between third party scripts
 <script src="host.js"></script>-->
 <!-- second third party scripts: Collector getter and getElementsByTagName 
 <script src="test2.js" thirdPartyId="test2"></script>-->
-<!-- eval cases -->
-<script src="eval.js" thirdPartyId="test_eval"></script>
-<!-- setTimeout cases -->
-<script src="setTimeout.js" thirdPartyId="test_setTimeout"></script>
+<!------------------------------------------------------------------>
+<!-- eval cases
+<script src="eval.js" thirdPartyId="test_eval"></script> -->
+<!-- setTimeout cases
+<script src="setTimeout.js" thirdPartyId="test_setTimeout"></script> -->
+<!------------------------------------------------------------------>
+<!-- EH cases -->
+<!-- first
+<script src="EH1.js" thirdPartyId="test_EH1"></script> -->
+<!-- second
+<script src="EH2.js" thirdPartyId="test_EH2"></script> -->
+<!-- third
+<script src="EH3.js" thirdPartyId="test_EH3"></script> -->
+<!-- fourth -->
+<script src="EH4.js" thirdPartyId="test_EH4"></script>
+<!------------------------------------------------------------------>
 </html>

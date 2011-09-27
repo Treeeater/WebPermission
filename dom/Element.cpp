@@ -62,6 +62,7 @@
 #include "WebKitAnimationList.h"
 #include "XMLNames.h"
 #include "htmlediting.h"
+#include "V8IsolatedContext.h"
 #include <wtf/text/CString.h>
 
 #if ENABLE(SVG)
@@ -685,7 +686,7 @@ void Element::setAttribute(const QualifiedName& name, const AtomicString& value,
 
 PassRefPtr<Attribute> Element::createAttribute(const QualifiedName& name, const AtomicString& value)
 {
-    return Attribute::create(name, value);
+	return Attribute::create(name, value);
 }
 
 void Element::attributeChanged(Attribute* attr, bool)

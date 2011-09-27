@@ -33,6 +33,7 @@
 
 #include "V8EventListener.h"
 #include "V8HiddenPropertyName.h"
+#include "V8IsolatedContext.h"
 
 #include <v8.h>
 #include <wtf/PassRefPtr.h>
@@ -95,8 +96,10 @@ namespace WebCore {
 
         PassRefPtr<V8EventListener> wrapperPtr = WrapperType::create(object, isAttribute, WorldContextHandle(UseCurrentWorld));
         if (wrapperPtr)
+		{
+			wrapperPtr->setThirdPartyId(V8IsolatedContext::getThirdPartyId());
             object->SetHiddenValue(wrapperProperty, v8::External::Wrap(wrapperPtr.get()));
-
+		}
         return wrapperPtr;
     }
 

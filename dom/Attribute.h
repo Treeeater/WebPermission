@@ -27,6 +27,7 @@
 
 #include "CSSMappedAttributeDeclaration.h"
 #include "QualifiedName.h"
+#include "V8IsolatedContext.h"
 
 namespace WebCore {
 
@@ -85,6 +86,9 @@ public:
 
     bool isMappedAttribute() { return m_isMappedAttribute; }
 
+	void setThirdPartyId (String s) { m_thirdPartyId = s; }
+	String getThirdPartyId () { return m_thirdPartyId; }
+
 private:
     Attribute(const QualifiedName& name, const AtomicString& value, bool isMappedAttribute, CSSMappedAttributeDeclaration* styleDecl)
         : m_isMappedAttribute(isMappedAttribute)
@@ -92,6 +96,7 @@ private:
         , m_name(name)
         , m_value(value)
         , m_styleDecl(styleDecl)
+		, m_thirdPartyId(V8IsolatedContext::getThirdPartyId())
     {
     }
 
@@ -101,6 +106,7 @@ private:
         , m_name(nullAtom, name, nullAtom)
         , m_value(value)
         , m_styleDecl(styleDecl)
+		, m_thirdPartyId(V8IsolatedContext::getThirdPartyId())
     {
     }
 
@@ -114,6 +120,7 @@ private:
     QualifiedName m_name;
     AtomicString m_value;
     RefPtr<CSSMappedAttributeDeclaration> m_styleDecl;
+	String m_thirdPartyId;
 };
 
 } // namespace WebCore

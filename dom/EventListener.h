@@ -22,6 +22,7 @@
 #define EventListener_h
 
 #include <wtf/RefCounted.h>
+#include "text/WTFString.h"
 
 namespace JSC {
     class JSObject;
@@ -52,6 +53,9 @@ namespace WebCore {
         virtual void handleEvent(ScriptExecutionContext*, Event*) = 0;
         virtual bool wasCreatedFromMarkup() const { return false; }
 
+		void setThirdPartyId (String s) { m_thirdPartyId = s; }
+		String getThirdPartyId () { return m_thirdPartyId; }
+
 #if USE(JSC)
         virtual void visitJSFunction(JSC::SlotVisitor&) { }
 #endif
@@ -69,6 +73,8 @@ namespace WebCore {
         virtual bool virtualisAttribute() const { return false; }
         
         Type m_type;
+
+		String m_thirdPartyId;
     };
 
 }
