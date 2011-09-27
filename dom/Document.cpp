@@ -162,6 +162,7 @@
 #include <wtf/PassRefPtr.h>
 #include <wtf/StdLibExtras.h>
 #include <wtf/text/StringBuffer.h>
+#include <sstream>
 
 #if ENABLE(SHARED_WORKERS)
 #include "SharedWorkerRepository.h"
@@ -518,8 +519,13 @@ Document::Document(Frame* frame, const KURL& url, bool isXHTML, bool isHTML)
     static int docID = 0;
     m_docID = docID++;
 	//initialize the file handler to log third party scripts' behavior:
-	m_thirdPartyLogHandle.open("thirdPartyLog.txt");
-	m_thirdPartyLogHandle << (url.string().ascii().data()) << " :" << endl;
+	if ((url.string()!="")&&(url.string()!=0))
+	{
+		std::stringstream filename;
+		filename << "thirdPartyLog" << docID << ".txt.";
+		m_thirdPartyLogHandle.open(filename.str().c_str());
+		m_thirdPartyLogHandle << (url.string().ascii().data()) << " :" << endl;
+	}
 
 #if ENABLE(XHTMLMP)
     m_shouldProcessNoScriptElement = !(m_frame && m_frame->script()->canExecuteScripts(NotAboutToExecuteScript));
@@ -590,7 +596,7 @@ Document::~Document()
 
 void Document::writeThirdPartyLog(String str)
 {
-	m_thirdPartyLogHandle << str.ascii().data() << endl;
+	if ((m_url.string()!="")&&(m_url.string()!=0)) m_thirdPartyLogHandle << str.ascii().data() << endl;
 }
 
 void Document::removedLastRef()
