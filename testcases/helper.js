@@ -1,0 +1,1 @@
+var helperFunc = function() {test = document.getElementById('secret').innerHTML;};

@@ -178,7 +178,7 @@ ScriptValue ScriptController::evaluate(const ScriptSourceCode& sourceCode, Strin
     String sourceURL = sourceCode.url();
     const String* savedSourceURL = m_sourceURL;
     m_sourceURL = &sourceURL;
-	String oldThirdPartyId = "";
+	String oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
     v8::HandleScope handleScope;
 	
     v8::Handle<v8::Context> v8Context = V8Proxy::mainWorldContext(m_proxy->frame());
@@ -188,22 +188,10 @@ ScriptValue ScriptController::evaluate(const ScriptSourceCode& sourceCode, Strin
     v8::Context::Scope scope(v8Context);
 
     RefPtr<Frame> protect(m_frame);
-/*
-	V8IsolatedContext* isolatedContext = 0;
-	if (V8IsolatedContext::getEntered() == 0)
-	{
-		//create isolated context on first run
-		isolatedContext = new V8IsolatedContext(m_proxy.get(), 1, 0, thirdPartyId);
-	}*/
+
 	if (thirdPartyId!=0)
 	{
-		oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
 		V8IsolatedContext::setThirdPartyId(thirdPartyId);
-	}
-	else
-	{
-		oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
-		V8IsolatedContext::setThirdPartyId("");
 	}
 
     v8::Local<v8::Value> object = m_proxy->evaluate(sourceCode, 0);
