@@ -40,6 +40,7 @@
 #include "ResourceHandle.h"
 #include "SecurityOrigin.h"
 #include "Settings.h"
+#include "Attr.h"
 
 namespace WebCore {
 
@@ -519,7 +520,11 @@ void HTMLAnchorElement::handleClick(Event* event)
         frame->loader()->client()->startDownload(request, fastGetAttribute(downloadAttr));
     } else
 #endif
-        frame->loader()->urlSelected(kurl, target(), event, false, false, hasRel(RelationNoReferrer) ? NoReferrer : SendReferrer);
+	{
+		String tpid = this->getAttributeNode("href").get()->attr()->getThirdPartyId();
+	
+        frame->loader()->urlSelected(kurl, target(), event, false, false, hasRel(RelationNoReferrer) ? NoReferrer : SendReferrer, tpid);
+	}
 
     sendPings(kurl);
 }

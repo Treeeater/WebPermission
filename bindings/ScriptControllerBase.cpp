@@ -32,6 +32,7 @@
 #include "SecurityOrigin.h"
 #include "Settings.h"
 #include "UserGestureIndicator.h"
+#include "V8IsolatedContext.h"
 
 namespace WebCore {
 
@@ -53,13 +54,13 @@ bool ScriptController::canExecuteScripts(ReasonForCallingCanExecuteScripts reaso
     return allowed;
 }
 
-ScriptValue ScriptController::executeScript(const String& script, bool forceUserGesture)
+ScriptValue ScriptController::executeScript(const String& script, bool forceUserGesture, String tpid)
 {
     UserGestureIndicator gestureIndicator(forceUserGesture ? DefinitelyProcessingUserGesture : PossiblyProcessingUserGesture);
-    return executeScript(ScriptSourceCode(script, m_frame->document()->url()));
+    return executeScript(ScriptSourceCode(script, m_frame->document()->url()), tpid);
 }
 
-ScriptValue ScriptController::executeScript(const ScriptSourceCode& sourceCode)
+ScriptValue ScriptController::executeScript(const ScriptSourceCode& sourceCode, String tpid)
 {
     if (!canExecuteScripts(AboutToExecuteScript) || isPaused())
         return ScriptValue();
@@ -69,7 +70,7 @@ ScriptValue ScriptController::executeScript(const ScriptSourceCode& sourceCode)
 
     RefPtr<Frame> protect(m_frame); // Script execution can destroy the frame, and thus the ScriptController.
 
-    ScriptValue result = evaluate(sourceCode);
+    ScriptValue result = evaluate(sourceCode, tpid);
 
     if (!wasInExecuteScript) {
         m_inExecuteScript = false;
@@ -79,7 +80,7 @@ ScriptValue ScriptController::executeScript(const ScriptSourceCode& sourceCode)
     return result;
 }
 
-bool ScriptController::executeIfJavaScriptURL(const KURL& url, ShouldReplaceDocumentIfJavaScriptURL shouldReplaceDocumentIfJavaScriptURL)
+bool ScriptController::executeIfJavaScriptURL(const KURL& url, ShouldReplaceDocumentIfJavaScriptURL shouldReplaceDocumentIfJavaScriptURL, String tpid)
 {
     if (!protocolIsJavaScript(url))
         return false;
@@ -97,8 +98,8 @@ bool ScriptController::executeIfJavaScriptURL(const KURL& url, ShouldReplaceDocu
     const int javascriptSchemeLength = sizeof("javascript:") - 1;
 
     String decodedURL = decodeURLEscapeSequences(url.string());
-    ScriptValue result = executeScript(decodedURL.substring(javascriptSchemeLength));
 
+    ScriptValue result = executeScript(decodedURL.substring(javascriptSchemeLength), tpid);
     // If executing script caused this frame to be removed from the page, we
     // don't want to try to replace its document!
     if (!m_frame->page())

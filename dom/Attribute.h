@@ -76,7 +76,7 @@ public:
     CSSMappedAttributeDeclaration* decl() const { return m_styleDecl.get(); }
     void setDecl(PassRefPtr<CSSMappedAttributeDeclaration> decl) { m_styleDecl = decl; }
 
-    void setValue(const AtomicString& value) { m_value = value; }
+	void setValue(const AtomicString& value) { m_value = value; m_thirdPartyId = V8IsolatedContext::getThirdPartyId();}
     void setPrefix(const AtomicString& prefix) { m_name.setPrefix(prefix); }
 
     // Note: This API is only for HTMLTreeBuilder.  It is not safe to change the

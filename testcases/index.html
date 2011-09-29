@@ -5,9 +5,10 @@
 <div id = "secret">secret</div>
 <div id = "public">public</div>
 <div id = "secret2">secret2</div>
-<script src="helper.js"></script>
+<a id = "anchor" href="#">anchor</a>
 <!-- iframe (multiple document case)
-<iframe src="iframe.html"></iframe> -->
+<iframe id = "iframe1" src="iframe.html"></iframe>
+<script id = "iframeScript" src = "iframeScript.js" thirdPartyId = "iframeScript"></script> -->
 </body>
 <!------------------------------------------------------------------>
 <!-- normal cases: getElementById taint source
@@ -23,8 +24,10 @@
 <script src="setTimeout.js" thirdPartyId="test_setTimeout"></script> -->
 <!-- create a script node case
 <script src="scriptNode.js" thirdPartyId="scriptNode"></script> -->
+<!-- JavaScript Pseudo-protocol -->
+<script src="pseudo.js" thirdPartyId="pseudo"></script>
 <!------------------------------------------------------------------>
-<!-- EH cases: The 1,2 and 4 will eat up each other. But this behavior is actually correct. -->
+<!-- EH cases -->
 <!-- first
 <script src="EH1.js" thirdPartyId="test_EH1"></script> -->
 <!-- second
@@ -35,8 +38,9 @@
 <script src="EH4.js" thirdPartyId="test_EH4"></script> -->
 <!------------------------------------------------------------------>
 <!-- Document.write test cases:
-Result: browser pass this test in a weird fashion: the first time event handlers are called, the script need to touch the triggering element first. This does not happen in the other direct EH cases.  However this situation also happens in the innerHTML EH case.  Also keep in mind that comment node is a counted as a node now.  As long as the recording behavior is consistent, we have no trouble here.
+Result: browser pass this test in a weird fashion: the first time event handlers are called, the script need to touch the triggering element first. This does not happen in the other direct EH cases.  However this situation also happens in the innerHTML EH case.  Also keep in mind that comment node is a counted as a node now.
 <script src="write.js" thirdPartyId="write"></script> -->
 <!-- Element.innerHTML test case: innerHTML cannot trigger code in new script tags to execute; it however can still add eventhandlers.
+<script src="helper.js"></script>
 <script src="innerHTML.js"  thirdPartyId="innerHTML"></script> -->
 </html>
