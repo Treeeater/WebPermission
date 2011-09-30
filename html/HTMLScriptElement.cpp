@@ -30,6 +30,7 @@
 #include "HTMLNames.h"
 #include "ScriptEventListener.h"
 #include "Text.h"
+#include "V8IsolatedContext.h"
 
 namespace WebCore {
 
@@ -40,6 +41,12 @@ inline HTMLScriptElement::HTMLScriptElement(const QualifiedName& tagName, Docume
     , ScriptElement(this, wasInsertedByParser, alreadyStarted)
 {
     ASSERT(hasTagName(scriptTag));
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		ExceptionCode ec;
+		const AtomicString tpid = "thirdPartyId";
+		this->setAttribute(tpid,V8IsolatedContext::getThirdPartyId(),ec);
+	}
 }
 
 PassRefPtr<HTMLScriptElement> HTMLScriptElement::create(const QualifiedName& tagName, Document* document, bool wasInsertedByParser)

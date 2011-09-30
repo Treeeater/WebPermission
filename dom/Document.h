@@ -603,7 +603,7 @@ public:
 
     bool wellFormed() const { return m_wellFormed; }
 
-    const KURL& url() const { return m_url; }
+    const KURL& url() const;
     void setURL(const KURL&);
 
     const KURL& baseURL() const { return m_baseURL; }
@@ -797,21 +797,21 @@ public:
     HTMLFrameOwnerElement* ownerElement() const;
 
     // Used by DOM bindings; no direction known.
-    String title() const { return m_title.string(); }
+    String title() const;
     void setTitle(const String&);
 
     void setTitleElement(const StringWithDirection&, Element* titleElement);
     void removeTitle(Element* titleElement);
 
-    String cookie(ExceptionCode&) const;
+    String cookie(ExceptionCode&);
     void setCookie(const String&, ExceptionCode&);
 
-    String referrer() const;
+    String referrer();
 
-    String domain() const;
+    String domain();
     void setDomain(const String& newDomain, ExceptionCode&);
 
-    String lastModified() const;
+    String lastModified();
 
     // The cookieURL is used to query the cookie database for this document's
     // cookies. For example, if the cookie URL is http://example.com, we'll

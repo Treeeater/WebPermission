@@ -155,6 +155,7 @@
 #include "XMLHttpRequestProgressEvent.h"
 #include "XMLNSNames.h"
 #include "XMLNames.h"
+#include "V8IsolatedContext.h"
 #include "htmlediting.h"
 #include <wtf/CurrentTime.h>
 #include <wtf/HashFunctions.h>
@@ -1342,8 +1343,39 @@ void Document::updateTitle(const StringWithDirection& title)
         f->loader()->setTitle(m_title);
 }
 
+const KURL& Document::url() const
+{
+	/*
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.url read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		this->writeThirdPartyLog(toWrite);
+	}*/
+	return m_url; 
+}
+
+String Document::title() const
+{
+	/*
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.title read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		this->writeThirdPartyLog(toWrite);
+	}
+	*/
+	 return m_title.string();
+}
+
 void Document::setTitle(const String& title)
 {
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.title set by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		this->writeThirdPartyLog(toWrite);
+	}
     // Title set by JavaScript -- overrides any title elements.
     m_titleSetExplicitly = true;
     if (!isHTMLDocument() && !isXHTMLDocument())
@@ -3652,7 +3684,7 @@ HTMLFrameOwnerElement* Document::ownerElement() const
     return frame()->ownerElement();
 }
 
-String Document::cookie(ExceptionCode& ec) const
+String Document::cookie(ExceptionCode& ec)
 {
     if (page() && !page()->cookieEnabled())
         return String();
@@ -3670,6 +3702,12 @@ String Document::cookie(ExceptionCode& ec) const
     if (cookieURL.isEmpty())
         return String();
 
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.cookie read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		this->writeThirdPartyLog(toWrite);
+	}
     return cookies(this, cookieURL);
 }
 
@@ -3691,23 +3729,48 @@ void Document::setCookie(const String& value, ExceptionCode& ec)
     if (cookieURL.isEmpty())
         return;
 
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.cookie set by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		this->writeThirdPartyLog(toWrite);
+	}
+
     setCookies(this, cookieURL, value);
 }
 
-String Document::referrer() const
+String Document::referrer()
 {
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.referrer read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		this->writeThirdPartyLog(toWrite);
+	}
     if (frame())
         return frame()->loader()->referrer();
     return String();
 }
 
-String Document::domain() const
+String Document::domain()
 {
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.domain read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		this->writeThirdPartyLog(toWrite);
+	}
     return securityOrigin()->domain();
 }
 
 void Document::setDomain(const String& newDomain, ExceptionCode& ec)
 {
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.domain set by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		this->writeThirdPartyLog(toWrite);
+	}
     if (SecurityOrigin::isDomainRelaxationForbiddenForURLScheme(securityOrigin()->protocol())) {
         ec = SECURITY_ERR;
         return;
@@ -3760,8 +3823,14 @@ void Document::setDomain(const String& newDomain, ExceptionCode& ec)
 }
 
 // http://www.whatwg.org/specs/web-apps/current-work/#dom-document-lastmodified
-String Document::lastModified() const
+String Document::lastModified()
 {
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.lastModified read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		writeThirdPartyLog(toWrite);
+	}
     DateComponents date;
     bool foundDate = false;
     if (m_frame) {

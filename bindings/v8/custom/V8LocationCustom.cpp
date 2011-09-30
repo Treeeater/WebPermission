@@ -44,6 +44,7 @@
 #include "V8Location.h"
 #include "V8Utilities.h"
 #include "V8Proxy.h"
+#include "V8IsolatedContext.h"
 
 namespace WebCore {
 
@@ -274,6 +275,12 @@ bool V8Location::namedSecurityCheck(v8::Local<v8::Object> host, v8::Local<v8::Va
 
 v8::Handle<v8::Value> toV8(Location* impl)
 {
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.location accessed by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		impl->frame()->document()->writeThirdPartyLog(toWrite);
+	}
     if (!impl)
         return v8::Null();
     v8::Handle<v8::Object> wrapper = getDOMObjectMap().get(impl);
