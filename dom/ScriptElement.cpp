@@ -283,7 +283,7 @@ void ScriptElement::executeScript(const ScriptSourceCode& sourceCode)
 
     RefPtr<Document> document = m_element->document();
 	String thirdPartyId = m_element->getAttribute("thirdPartyId");
-	if ((thirdPartyId=="")||(thirdPartyId==0)) thirdPartyId = ((HTMLScriptElement*)m_element)->getThirdPartyId();
+	//if ((thirdPartyId=="")||(thirdPartyId==0)) thirdPartyId = ((HTMLScriptElement*)m_element)->getThirdPartyId();
     ASSERT(document);
     if (Frame* frame = document->frame()) {
         {

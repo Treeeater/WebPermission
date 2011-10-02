@@ -9,6 +9,8 @@
 <!-- iframe (multiple document case)
 <iframe id = "iframe1" src="iframe.html"></iframe>
 <script id = "iframeScript" src = "iframeScript.js" thirdPartyId = "iframeScript"></script> -->
+<!-- iframe test case 2: dynamically create a iframe:
+<script id = "iframeScript2" src = "iframeScript2.js" thirdPartyId = "iframeScript2"></script> -->
 </body>
 <!------------------------------------------------------------------>
 <!-- normal cases: getElementById taint source
@@ -39,9 +41,9 @@
 <!------------------------------------------------------------------>
 <!-- Document.write test cases:
 Result: browser pass this test in a weird fashion: the first time event handlers are called, the script need to touch the triggering element first. This does not happen in the other direct EH cases.  However this situation also happens in the innerHTML EH case.  Also keep in mind that comment node is a counted as a node now.
-<script src="write.js" thirdPartyId="write"></script> -->
+<script src="write.js" thirdPartyId="write"></script>
 <iframe id = "writeEHframe" src="writeEH.html"></iframe>
-<script src="writeEH.js" thirdPartyId="writeEH"></script>
+<script src="writeEH.js" thirdPartyId="writeEH"></script> -->
 <!-- Element.innerHTML test case: innerHTML cannot trigger code in new script tags to execute; it however can still add eventhandlers.
 <script src="helper.js"></script>
 <script src="innerHTML.js"  thirdPartyId="innerHTML"></script> -->

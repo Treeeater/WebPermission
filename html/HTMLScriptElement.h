@@ -40,8 +40,8 @@ public:
 
     void setAsync(bool);
     bool async() const;
-	String getThirdPartyId() const { return m_thirdPartyId; };
-	void setThirdPartyId(String s) { m_thirdPartyId = s; };
+	//String getThirdPartyId() const { return m_thirdPartyId; };
+	//void setThirdPartyId(String s) { m_thirdPartyId = s; };
 
 private:
     HTMLScriptElement(const QualifiedName&, Document*, bool wasInsertedByParser, bool alreadyStarted);
@@ -69,7 +69,7 @@ private:
     virtual void dispatchLoadEvent();
 
     virtual PassRefPtr<Element> cloneElementWithoutAttributesAndChildren();
-	String m_thirdPartyId;	//for delayed scheduled firing purposes: for some reason the newly created m_attributeMap pointer for newly created script tag will be freed and
+	//String m_thirdPartyId;	//for delayed scheduled firing purposes: for some reason the newly created m_attributeMap pointer for newly created script tag will be freed and
 	//later recreated. In this fashion the originally assigned thirdPartyId is lost. 
 };
 

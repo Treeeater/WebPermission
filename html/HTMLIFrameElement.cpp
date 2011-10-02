@@ -32,6 +32,7 @@
 #include "HTMLNames.h"
 #include "NodeRenderingContext.h"
 #include "RenderIFrame.h"
+#include "V8IsolatedContext.h"
 
 namespace WebCore {
 
@@ -148,6 +149,10 @@ void HTMLIFrameElement::insertedIntoDocument()
         static_cast<HTMLDocument*>(document())->addExtraNamedItem(m_name);
 
     HTMLFrameElementBase::insertedIntoDocument();
+	if ((V8IsolatedContext::getThirdPartyId()!=0)&&(V8IsolatedContext::getThirdPartyId()!=""))
+	{
+		this->contentFrame()->setThirdPartyId(V8IsolatedContext::getThirdPartyId());
+	}
 }
 
 void HTMLIFrameElement::removedFromDocument()
