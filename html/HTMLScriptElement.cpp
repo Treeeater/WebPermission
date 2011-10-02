@@ -45,7 +45,12 @@ inline HTMLScriptElement::HTMLScriptElement(const QualifiedName& tagName, Docume
 	{
 		ExceptionCode ec;
 		const AtomicString tpid = "thirdPartyId";
-		this->setAttribute(tpid,V8IsolatedContext::getThirdPartyId(),ec);
+		this->setAttribute(tpid, V8IsolatedContext::getThirdPartyId(), ec);
+		m_thirdPartyId = V8IsolatedContext::getThirdPartyId();			//just for delayed loading.
+	}
+	else 
+	{
+		m_thirdPartyId = "";
 	}
 }
 

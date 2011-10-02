@@ -67,6 +67,7 @@ namespace WebCore {
         EventListener(Type type)
             : m_type(type)
         {
+
         }
 
     private:

@@ -48,6 +48,8 @@
 #include "Page.h"
 #include "UserGestureIndicator.h"
 #include <wtf/CurrentTime.h>
+#include "V8IsolatedContext.h"
+#include "text/WTFString.h"
 
 namespace WebCore {
 
@@ -82,6 +84,7 @@ public:
 
 protected:
     void clearUserGesture() { m_wasUserGesture = false; }
+	String m_thirdPartyId;
 
 private:
     double m_delay;
@@ -101,12 +104,22 @@ protected:
         , m_referrer(referrer)
         , m_haveToldClient(false)
     {
+		if (V8IsolatedContext::getThirdPartyId()!=0)
+		{
+			this->m_thirdPartyId = V8IsolatedContext::getThirdPartyId();
+		}
+		else
+			this->m_thirdPartyId = "";
     }
 
     virtual void fire(Frame* frame)
     {
+		//String oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
+		//V8IsolatedContext::setThirdPartyId(m_thirdPartyId);
+		frame->setThirdPartyId(m_thirdPartyId);
         UserGestureIndicator gestureIndicator(wasUserGesture() ? DefinitelyProcessingUserGesture : DefinitelyNotProcessingUserGesture);
         frame->loader()->changeLocation(m_securityOrigin.get(), KURL(ParsedURLString, m_url), m_referrer, lockHistory(), lockBackForwardList(), false);
+		//V8IsolatedContext::setThirdPartyId(oldThirdPartyId);
     }
 
     virtual void didStartTimer(Frame* frame, Timer<NavigationScheduler>* timer)

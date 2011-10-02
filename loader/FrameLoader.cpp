@@ -2084,7 +2084,16 @@ void FrameLoader::finishedLoading()
     RefPtr<Frame> protect(m_frame);
 
     RefPtr<DocumentLoader> dl = activeDocumentLoader();
+	String oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
+	String delayedThirdPartyId = dl->frame()->getThirdPartyId();
+	if ((delayedThirdPartyId!="")&&(delayedThirdPartyId!=0))
+		V8IsolatedContext::setThirdPartyId(delayedThirdPartyId);
     dl->finishedLoading();
+	if ((delayedThirdPartyId!="")&&(delayedThirdPartyId!=0))
+	{
+		V8IsolatedContext::setThirdPartyId(oldThirdPartyId);
+		dl->frame()->setThirdPartyId("");			//reset the frame thirdpartyid
+	}
     if (!dl->mainDocumentError().isNull() || !dl->frameLoader())
         return;
     dl->setPrimaryLoadComplete(true);

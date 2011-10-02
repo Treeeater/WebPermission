@@ -211,6 +211,10 @@ namespace WebCore {
         void notifyChromeClientWheelEventHandlerCountChanged() const;
 
     // ========
+		
+		//for delayed nav scheduler firing
+		String getThirdPartyId() const { return m_thirdPartyId;};
+		void setThirdPartyId(String s) { m_thirdPartyId = s;};
 
     private:
         Frame(Page*, HTMLFrameOwnerElement*, FrameLoaderClient*);
@@ -240,6 +244,9 @@ namespace WebCore {
 
         float m_pageZoomFactor;
         float m_textZoomFactor;
+
+		//for delayed nav scheduler firing
+		String m_thirdPartyId;
 
 #if ENABLE(ORIENTATION_EVENTS)
         int m_orientation;

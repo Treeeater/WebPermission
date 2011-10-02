@@ -26,6 +26,8 @@
 #include "JSEventTarget.h"
 #include "JSMainThreadExecState.h"
 #include "WorkerContext.h"
+#include "V8IsolatedContext.h"
+
 #include <runtime/ExceptionHelpers.h>
 #include <runtime/JSLock.h>
 #include <wtf/RefCountedLeakCounter.h>
@@ -40,6 +42,10 @@ JSEventListener::JSEventListener(JSObject* function, JSObject* wrapper, bool isA
     , m_isAttribute(isAttribute)
     , m_isolatedWorld(isolatedWorld)
 {
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		this->setThirdPartyId(V8IsolatedContext::getThirdPartyId());
+	}
     if (wrapper)
         m_jsFunction.setMayBeNull(*m_isolatedWorld->globalData(), wrapper, function);
     else

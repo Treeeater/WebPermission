@@ -51,6 +51,7 @@
 #include "Settings.h"
 #include "Text.h"
 #include <wtf/UnusedParam.h>
+#include "V8IsolatedContext.h"
 
 namespace WebCore {
 
@@ -321,6 +322,12 @@ void HTMLConstructionSite::insertScriptElement(AtomicHTMLToken& token)
     RefPtr<HTMLScriptElement> element = HTMLScriptElement::create(scriptTag, currentNode()->document(), true);
     if (m_fragmentScriptingPermission == FragmentScriptingAllowed)
         element->setAttributeMap(token.takeAtributes(), m_fragmentScriptingPermission);
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		ExceptionCode ec;
+		const AtomicString tpid = "thirdPartyId";
+		element->setAttribute(tpid, V8IsolatedContext::getThirdPartyId(), ec);
+	}
     m_openElements.push(attachToCurrent(element.release()));
 }
 
