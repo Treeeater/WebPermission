@@ -800,9 +800,17 @@ void Element::setAttributeMap(PassRefPtr<NamedNodeMap> list, FragmentScriptingPe
         // attributeChanged mutates m_attributeMap.
         Vector<RefPtr<Attribute> > attributes;
         m_attributeMap->copyAttributesToVector(attributes);
+		String oldThirdPartyId = V8IsolatedContext::getThirdPartyId();
+		if (m_attributeMap->getAttributeItem("__thirdPartyId",true)!=0)
+		{
+			V8IsolatedContext::setThirdPartyId(m_attributeMap->getAttributeItem("__thirdPartyId",true)->value());
+		}
         for (Vector<RefPtr<Attribute> >::iterator iter = attributes.begin(); iter != attributes.end(); ++iter)
             attributeChanged(iter->get());
         // FIXME: What about attributes that were in the old map that are not in the new map?
+		V8IsolatedContext::setThirdPartyId(oldThirdPartyId);
+		ExceptionCode ec;
+		this->removeAttribute("__thirdPartyId",ec);
     }
 }
 

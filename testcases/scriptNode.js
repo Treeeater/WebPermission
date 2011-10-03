@@ -1,4 +1,10 @@
 var str2write = "test = document.getElementById('secret').innerHTML;";
 var n = document.createElement('script');
-n.text=str2write;
+//n.text=str2write;
+n.src="naive.js";
 document.body.appendChild(n);
+var m = document.createElement('script');
+m.src="naive2.js";
+document.body.appendChild(m);
+alert("scriptNode");
+x=0;
