@@ -2338,6 +2338,123 @@ int Document::elapsedTime() const
     return static_cast<int>((currentTime() - m_startTime) * 1000);
 }
 
+bool transform(String& text, String str2write, int& scriptlevel, int& currentpointer)
+{
+	if ((currentpointer<0)||(currentpointer>=(int)text.length())) return true;		//ASSERT
+	int temp=0;
+	bool script = false;
+	if (scriptlevel == 0)
+	{
+		currentpointer = text.find('<',currentpointer);
+		temp = text.find("</",currentpointer);
+		if (currentpointer == -1) return true;		//done
+		if (temp==currentpointer)					//this is a closing tag, ignore.
+		{
+			currentpointer++;
+			return false;
+		}
+		else		//we found one starting tag 
+		{
+			if (text.substring(currentpointer).startsWith("script",false)) 
+			{
+				scriptlevel++;		//Is this a script tag?
+				script = true;
+			}
+			temp = 0;
+			temp = text.find('\"',currentpointer);
+			int temp2 = 0;
+			temp2 = text.find('\'',currentpointer);
+			currentpointer = text.find('>',currentpointer);	
+			if (currentpointer == -1) return true;	//error done: no gt after starting tag.
+			if ((currentpointer>temp)&&(temp!=-1)&&(temp<temp2||temp2==-1))
+			{
+				//indicate that this tag has at least one attribute
+				//the site developer uses double quote as attribute marker
+				bool flag = true;
+				bool even = false;
+				while (flag)
+				{
+					if (temp < currentpointer)
+					{
+						//this gt is after this double quote, so we are possibly done
+						if ((even)&&((((int)(text.find('\"',temp+1)))>currentpointer)||(text.find('\"',temp+1)==-1)))
+						{
+							//double quote matches, next double quote is after gt or next double does not exist: we are correctly done.
+							flag = false;
+						}
+						else
+						{
+							//double quote doesn't match or next double quote exists and is still before gt: we need to find the next double quote.
+							temp = text.find('\"', temp+1);				//temp is now the next gt
+							if (temp!=-1) even = !even;					//we just found another double quote, need to flip even status
+							if ((temp==-1)&&(!even)) return true;		//error done: double quote doesn't match.
+						}
+					}
+					else
+					{
+						//this gt is in some eventhandlers' definition, ignore this and search for a new one
+						currentpointer = text.find('>',currentpointer+1);
+						if (currentpointer == -1) return true;	//error done: no gt after starting tag.
+					}
+				}
+			}
+			if ((currentpointer>temp2)&&(temp2!=-1)&&(temp2<temp||temp==-1))
+			{
+				//indicate that this tag has at least one attribute
+				//the site developer uses single quote as attribute marker
+				bool flag = true;
+				bool even = false;
+				while (flag)
+				{
+					if (temp2 < currentpointer)
+					{
+						//this gt is after this double quote, so we are possibly done
+						if ((even)&&((((int)(text.find('\'',temp2+1)))>currentpointer)||(text.find('\'',temp2+1)==-1)))
+						{
+							//double quote matches, next double quote is after gt or next double does not exist: we are correctly done.
+							flag = false;
+						}
+						else
+						{
+							//double quote doesn't match or next double quote exists and is still before gt: we need to find the next double quote.
+							temp2 = text.find('\'', temp2+1);				//temp is now the next gt
+							if (temp2!=-1) even = !even;					//we just found another double quote, need to flip even status
+							if ((temp2==-1)&&(!even)) return true;		//error done: double quote doesn't match.
+						}
+					}
+					else
+					{
+						//this gt is in some eventhandlers' definition, ignore this and search for a new one
+						currentpointer = text.find('>',currentpointer+1);
+						if (currentpointer == -1) return true;	//error done: no gt after starting tag.
+					}
+				}
+			}
+			//found the end of the starting tag. Known bug: if the developers interchangebly uses double quote and single quote within a single tag as attr markers.
+			if (text[currentpointer-1]=='/') 
+			{
+				currentpointer--;		//deal w/ self closing tag
+				if (script == true) scriptlevel--;
+			}
+		}
+		//now we found the place to insert our str2write
+		text.insert(str2write,currentpointer);
+		currentpointer+=str2write.length();
+		return false;		//assuming not done yet
+	}
+	else if (scriptlevel > 0)		//we are in a script tag, don't do anything until we found the exit.
+	{
+		currentpointer = text.find("</script>",currentpointer);
+		if (currentpointer == -1) return true;		//error done
+		else
+		{
+			scriptlevel--;
+			return false;							//assuming not done yet
+		}
+	}
+	return true;		//error done
+}
+
 void Document::write(const SegmentedString& text, Document* ownerDocument)
 {
     NestingLevelIncrementer nestingLevelIncrementer(m_writeRecursionDepth);
@@ -2371,7 +2488,18 @@ void Document::write(const SegmentedString& text, Document* ownerDocument)
 
 void Document::write(const String& text, Document* ownerDocument)
 {
-    write(SegmentedString(text), ownerDocument);
+	String text2(text);
+	if ((V8IsolatedContext::getThirdPartyId()!=0)&&(V8IsolatedContext::getThirdPartyId()!=""))
+	{
+		String str2write = " thirdPartyId = \"";
+		str2write.append(V8IsolatedContext::getThirdPartyId());
+		str2write.append("\" __thirdPartyId = \"");
+		str2write.append(V8IsolatedContext::getThirdPartyId());
+		str2write.append("\"");
+		int scriptlevel = 0, currentpointer = 0;
+		while (!transform(text2, str2write, scriptlevel, currentpointer)){}
+	}
+    write(SegmentedString(text2), ownerDocument);
 }
 
 void Document::writeln(const String& text, Document* ownerDocument)
