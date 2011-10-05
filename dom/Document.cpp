@@ -520,7 +520,7 @@ Document::Document(Frame* frame, const KURL& url, bool isXHTML, bool isHTML)
     static int docID = 0;
     m_docID = docID++;
 	//initialize the file handler to log third party scripts' behavior:
-	if ((url.string()!="")&&(url.string()!=0))
+	if ((url.string()!="")&&(url.string()!=0)&&(!url.string().startsWith("about:"))&&(!url.string().startsWith("chrome:")))
 	{
 		std::stringstream filename;
 		filename << "thirdPartyLog" << docID << ".txt.";
@@ -592,12 +592,12 @@ Document::~Document()
     if (m_mediaQueryMatcher)
         m_mediaQueryMatcher->documentDestroyed();
 
-	m_thirdPartyLogHandle.close();
+	if (m_thirdPartyLogHandle.is_open()) m_thirdPartyLogHandle.close();
 }
 
 void Document::writeThirdPartyLog(String str)
 {
-	if ((m_url.string()!="")&&(m_url.string()!=0)) m_thirdPartyLogHandle << str.ascii().data() << endl;
+	if (m_thirdPartyLogHandle.is_open()) m_thirdPartyLogHandle << str.ascii().data() << endl;
 }
 
 void Document::removedLastRef()
