@@ -2342,15 +2342,23 @@ bool transform(String& text, String str2write, int& scriptlevel, int& currentpoi
 {
 	if ((currentpointer<0)||(currentpointer>=(int)text.length())) return true;		//ASSERT
 	int temp=0;
+	int comment = 0;
 	bool script = false;
 	if (scriptlevel == 0)
 	{
 		currentpointer = text.find('<',currentpointer);
 		temp = text.find("</",currentpointer);
+		comment = text.find("<!--", currentpointer);
 		if (currentpointer == -1) return true;		//done
 		if (temp==currentpointer)					//this is a closing tag, ignore.
 		{
 			currentpointer++;
+			return false;
+		}
+		else if (comment == currentpointer)
+		{
+			//this is a starting tag for a comment
+			currentpointer = text.find("-->",currentpointer)+3;		//we simply find the end of the comment and move currentpointer after that.
 			return false;
 		}
 		else		//we found one starting tag 
