@@ -586,6 +586,12 @@ static v8::Handle<v8::Value> navigatorAttrGetter(v8::Local<v8::String> name, con
 {
     INC_STATS("DOM.DOMWindow.navigator._get");
     DOMWindow* imp = V8DOMWindow::toNative(info.Holder());
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "window.navigator read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		imp->document()->writeThirdPartyLog(toWrite);
+	}
     RefPtr<Navigator> result = imp->navigator();
     v8::Handle<v8::Value> wrapper = result.get() ? getDOMObjectMap().get(result.get()) : v8::Handle<v8::Value>();
     if (wrapper.IsEmpty()) {

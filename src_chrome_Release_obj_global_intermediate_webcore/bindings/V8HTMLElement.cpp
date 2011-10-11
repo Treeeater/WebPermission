@@ -33,6 +33,7 @@
 #include "V8HTMLCollection.h"
 #include "V8IsolatedContext.h"
 #include "V8Proxy.h"
+#include "wtf/text/WTFString.h"
 #include <wtf/GetPtr.h>
 #include <wtf/RefCounted.h>
 #include <wtf/RefPtr.h>
@@ -176,6 +177,40 @@ static v8::Handle<v8::Value> innerHTMLAttrGetter(v8::Local<v8::String> name, con
 {
     INC_STATS("DOM.HTMLElement.innerHTML._get");
     HTMLElement* imp = V8HTMLElement::toNative(info.Holder());
+
+	/* innerHTML getter mediation*/
+	//'origin' is the current thirdPartyId.
+	String origin = V8IsolatedContext::getThirdPartyId();
+	if ((origin != "")&&(origin != 0))
+	{
+		//This is from a thirdParty script, we want to record it.
+		String nodeInfo = "";
+		Node* currentNode = imp;
+		char buff[5];			//assume the index of a node cannot exceed 10000
+		while (currentNode!=0)
+		{
+			nodeInfo.append(currentNode->nodeName());
+			int index = -1;		//initalize to -1 to start the index from 0
+			Node *indexNode = currentNode;
+			while (indexNode!=0)
+			{
+				if (!indexNode->isTextNode()) index ++;
+				indexNode = indexNode->previousSibling();
+			}
+			if (index>9999) index = 9999;	//assume the index of a node cannot exceed 10000
+			nodeInfo.append("[");
+			itoa(index,buff,10);
+			nodeInfo.append(buff);
+			nodeInfo.append("]/");
+			currentNode = currentNode->parentNode();
+		}
+		nodeInfo.append(" is accesed by ");
+		nodeInfo.append(origin);
+		nodeInfo.append(" (innerHTML)");
+		//write the log to disk.
+		imp->document()->writeThirdPartyLog(nodeInfo);
+	}
+
     return v8String(imp->innerHTML());
 }
 
@@ -195,6 +230,38 @@ static v8::Handle<v8::Value> innerTextAttrGetter(v8::Local<v8::String> name, con
 {
     INC_STATS("DOM.HTMLElement.innerText._get");
     HTMLElement* imp = V8HTMLElement::toNative(info.Holder());
+	/* innerHTML getter mediation*/
+	//'origin' is the current thirdPartyId.
+	String origin = V8IsolatedContext::getThirdPartyId();
+	if ((origin != "")&&(origin != 0))
+	{
+		//This is from a thirdParty script, we want to record it.
+		String nodeInfo = "";
+		Node* currentNode = imp;
+		char buff[5];			//assume the index of a node cannot exceed 10000
+		while (currentNode!=0)
+		{
+			nodeInfo.append(currentNode->nodeName());
+			int index = -1;		//initalize to -1 to start the index from 0
+			Node *indexNode = currentNode;
+			while (indexNode!=0)
+			{
+				if (!indexNode->isTextNode()) index ++;
+				indexNode = indexNode->previousSibling();
+			}
+			if (index>9999) index = 9999;	//assume the index of a node cannot exceed 10000
+			nodeInfo.append("[");
+			itoa(index,buff,10);
+			nodeInfo.append(buff);
+			nodeInfo.append("]/");
+			currentNode = currentNode->parentNode();
+		}
+		nodeInfo.append(" is accesed by ");
+		nodeInfo.append(origin);
+		nodeInfo.append(" (innerText)");
+		//write the log to disk.
+		imp->document()->writeThirdPartyLog(nodeInfo);
+	}
     return v8String(imp->innerText());
 }
 
@@ -214,6 +281,38 @@ static v8::Handle<v8::Value> outerHTMLAttrGetter(v8::Local<v8::String> name, con
 {
     INC_STATS("DOM.HTMLElement.outerHTML._get");
     HTMLElement* imp = V8HTMLElement::toNative(info.Holder());
+	/* innerHTML getter mediation*/
+	//'origin' is the current thirdPartyId.
+	String origin = V8IsolatedContext::getThirdPartyId();
+	if ((origin != "")&&(origin != 0))
+	{
+		//This is from a thirdParty script, we want to record it.
+		String nodeInfo = "";
+		Node* currentNode = imp;
+		char buff[5];			//assume the index of a node cannot exceed 10000
+		while (currentNode!=0)
+		{
+			nodeInfo.append(currentNode->nodeName());
+			int index = -1;		//initalize to -1 to start the index from 0
+			Node *indexNode = currentNode;
+			while (indexNode!=0)
+			{
+				if (!indexNode->isTextNode()) index ++;
+				indexNode = indexNode->previousSibling();
+			}
+			if (index>9999) index = 9999;	//assume the index of a node cannot exceed 10000
+			nodeInfo.append("[");
+			itoa(index,buff,10);
+			nodeInfo.append(buff);
+			nodeInfo.append("]/");
+			currentNode = currentNode->parentNode();
+		}
+		nodeInfo.append(" is accesed by ");
+		nodeInfo.append(origin);
+		nodeInfo.append(" (outerHTML)");
+		//write the log to disk.
+		imp->document()->writeThirdPartyLog(nodeInfo);
+	}
     return v8String(imp->outerHTML());
 }
 
@@ -233,6 +332,38 @@ static v8::Handle<v8::Value> outerTextAttrGetter(v8::Local<v8::String> name, con
 {
     INC_STATS("DOM.HTMLElement.outerText._get");
     HTMLElement* imp = V8HTMLElement::toNative(info.Holder());
+	/* innerHTML getter mediation*/
+	//'origin' is the current thirdPartyId.
+	String origin = V8IsolatedContext::getThirdPartyId();
+	if ((origin != "")&&(origin != 0))
+	{
+		//This is from a thirdParty script, we want to record it.
+		String nodeInfo = "";
+		Node* currentNode = imp;
+		char buff[5];			//assume the index of a node cannot exceed 10000
+		while (currentNode!=0)
+		{
+			nodeInfo.append(currentNode->nodeName());
+			int index = -1;		//initalize to -1 to start the index from 0
+			Node *indexNode = currentNode;
+			while (indexNode!=0)
+			{
+				if (!indexNode->isTextNode()) index ++;
+				indexNode = indexNode->previousSibling();
+			}
+			if (index>9999) index = 9999;	//assume the index of a node cannot exceed 10000
+			nodeInfo.append("[");
+			itoa(index,buff,10);
+			nodeInfo.append(buff);
+			nodeInfo.append("]/");
+			currentNode = currentNode->parentNode();
+		}
+		nodeInfo.append(" is accesed by ");
+		nodeInfo.append(origin);
+		nodeInfo.append(" (outerText)");
+		//write the log to disk.
+		imp->document()->writeThirdPartyLog(nodeInfo);
+	}
     return v8String(imp->outerText());
 }
 

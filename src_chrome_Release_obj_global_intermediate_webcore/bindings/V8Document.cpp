@@ -178,6 +178,12 @@ static v8::Handle<v8::Value> titleAttrGetter(v8::Local<v8::String> name, const v
 {
     INC_STATS("DOM.Document.title._get");
     Document* imp = V8Document::toNative(info.Holder());
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.title read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		imp->writeThirdPartyLog(toWrite);
+	}
     return v8String(imp->title());
 }
 
@@ -220,6 +226,12 @@ static v8::Handle<v8::Value> URLAttrGetter(v8::Local<v8::String> name, const v8:
 {
     INC_STATS("DOM.Document.URL._get");
     Document* imp = V8Document::toNative(info.Holder());
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.URL read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		imp->writeThirdPartyLog(toWrite);
+	}
     return v8String(imp->url());
 }
 

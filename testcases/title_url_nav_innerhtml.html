@@ -1,0 +1,18 @@
+<html>
+<body>
+<div id="1">
+a
+<span>asdf</span>
+</div>
+<script>
+var handle = function (){return document.getElementById('1');};
+</script>
+<script thirdPartyId="abc">
+var sec = handle().innerHTML;
+var handle2 = document.getElementById('1');
+var title = document.title;
+var nav = window.navigator;
+var url = document.URL;
+</script>
+</body>
+</html>
