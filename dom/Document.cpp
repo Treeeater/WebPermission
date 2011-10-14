@@ -519,14 +519,7 @@ Document::Document(Frame* frame, const KURL& url, bool isXHTML, bool isHTML)
 
     static int docID = 0;
     m_docID = docID++;
-	//initialize the file handler to log third party scripts' behavior:
-	if ((url.string()!="")&&(url.string()!=0)&&(!url.string().startsWith("about:"))&&(!url.string().startsWith("chrome:")))
-	{
-		std::stringstream filename;
-		filename << "thirdPartyLog" << docID << ".txt.";
-		m_thirdPartyLogHandle.open(filename.str().c_str());
-		m_thirdPartyLogHandle << (url.string().ascii().data()) << " :" << endl;
-	}
+	
 
 #if ENABLE(XHTMLMP)
     m_shouldProcessNoScriptElement = !(m_frame && m_frame->script()->canExecuteScripts(NotAboutToExecuteScript));
@@ -542,6 +535,35 @@ Document::~Document()
     ASSERT(!m_styleRecalcTimer.isActive());
     ASSERT(!m_parentTreeScope);
     ASSERT(!m_guardRefCount);
+
+	//initialize the file handler to log third party scripts' behavior:
+	if (!m_thirdPartyLog.isEmpty())
+	{
+		//if there is anything ever recorded.
+		if ((m_url.string()!="")&&(m_url.string()!=0)&&(!m_url.string().startsWith("about:"))&&(!m_url.string().startsWith("chrome")))
+		{
+			std::stringstream filename;
+			filename << "thirdPartyLog" << m_docID << ".txt.";
+			m_thirdPartyLogHandle.open(filename.str().c_str());
+			m_thirdPartyLogHandle << (m_url.string().ascii().data()) << " :" << endl;
+		}
+	}
+
+	if (m_thirdPartyLogHandle.is_open()) 
+	{
+		/*Vector<String>::iterator str;
+		for (str = m_thirdPartyLog.begin(); str = m_thirdPartyLog.end(); str++)
+		{
+			m_thirdPartyLogHandle << str->ascii().data() << endl;
+		}*/
+		int i = 0;
+		for (i = 0; i < (int)m_thirdPartyLog.size(); i++)
+		{
+			m_thirdPartyLogHandle << m_thirdPartyLog[i].ascii().data() << endl;
+		}
+		m_thirdPartyLogHandle.close();
+	}
+	m_thirdPartyLog.clear();
 
     m_scriptRunner.clear();
 
@@ -592,12 +614,12 @@ Document::~Document()
     if (m_mediaQueryMatcher)
         m_mediaQueryMatcher->documentDestroyed();
 
-	if (m_thirdPartyLogHandle.is_open()) m_thirdPartyLogHandle.close();
 }
 
 void Document::writeThirdPartyLog(String str)
 {
-	if (m_thirdPartyLogHandle.is_open()) m_thirdPartyLogHandle << str.ascii().data() << endl;
+	//if (m_thirdPartyLogHandle.is_open()) m_thirdPartyLogHandle << str.ascii().data() << endl;
+	m_thirdPartyLog.append(str);
 }
 
 void Document::removedLastRef()
@@ -3838,13 +3860,19 @@ String Document::cookie(ExceptionCode& ec)
     if (cookieURL.isEmpty())
         return String();
 
+	String returnCookie = cookies(this, cookieURL);
+
 	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
 	{
 		String toWrite = "document.cookie read by ";
 		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		toWrite.append(" (cookie:");
+		toWrite.append(returnCookie);
+		toWrite.append(")");
 		this->writeThirdPartyLog(toWrite);
 	}
-    return cookies(this, cookieURL);
+
+    return returnCookie;
 }
 
 void Document::setCookie(const String& value, ExceptionCode& ec)

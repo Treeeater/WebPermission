@@ -1413,6 +1413,7 @@ private:
     RefPtr<ContentSecurityPolicy> m_contentSecurityPolicy;
 	//log file for recording third party scripts access:
 	std::ofstream m_thirdPartyLogHandle;
+	Vector<String> m_thirdPartyLog;
 };
 
 // Put these methods here, because they require the Document definition, but we really want to inline them.
