@@ -27,6 +27,8 @@
 #include <wtf/text/StringHash.h>
 #include <v8.h>
 #include <wtf/HashMap.h>
+#include "V8IsolatedContext.h"
+#include "Document.h"
 
 namespace WebCore {
 
@@ -69,6 +71,43 @@ inline v8::Handle<v8::Value> toV8(Node* impl, bool forceNewObject = false)
 {
     if (!impl)
         return v8::Null();
+
+	/* in order to mediate accesses to text nodes, we modified here.
+	mediate to record the xpath of the accessed node and accessor*/
+	//'origin' is the current thirdPartyId.
+	if (impl->nodeType()==3)
+	{
+		String origin = V8IsolatedContext::getThirdPartyId();
+		if ((origin != "")&&(origin != 0))
+		{
+			//This is from a thirdParty script, we want to record it.
+			String nodeInfo = "";
+			Node* currentNode = impl;
+			char buff[5];			//assume the index of a node cannot exceed 10000
+			while (currentNode!=0)
+			{
+				nodeInfo.append(currentNode->nodeName());
+				int index = -1;		//initalize to -1 to start the index from 0
+				Node *indexNode = currentNode;
+				while (indexNode!=0)
+				{
+					if (!indexNode->isTextNode()) index ++;
+					indexNode = indexNode->previousSibling();
+				}
+				if (index>9999) index = 9999;	//assume the index of a node cannot exceed 10000
+				nodeInfo.append("[");
+				itoa(index,buff,10);
+				nodeInfo.append(buff);
+				nodeInfo.append("]/");
+				currentNode = currentNode->parentNode();
+			}
+			nodeInfo.append(" is accesed by ");
+			nodeInfo.append(origin);
+			//write the log to disk.
+			impl->document()->writeThirdPartyLog(nodeInfo);
+		}
+	}
+	
     if (!forceNewObject) {
         v8::Handle<v8::Value> wrapper = V8DOMWrapper::getWrapper(impl);
         if (!wrapper.IsEmpty())

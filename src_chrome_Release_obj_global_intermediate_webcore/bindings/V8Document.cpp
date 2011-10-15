@@ -264,6 +264,12 @@ static v8::Handle<v8::Value> bodyAttrGetter(v8::Local<v8::String> name, const v8
 {
     INC_STATS("DOM.Document.body._get");
     Document* imp = V8Document::toNative(info.Holder());
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.body read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		imp->writeThirdPartyLog(toWrite);
+	}
     return toV8(imp->body());
 }
 
@@ -274,6 +280,12 @@ static void bodyAttrSetter(v8::Local<v8::String> name, v8::Local<v8::Value> valu
     HTMLElement* v = V8HTMLElement::HasInstance(value) ? V8HTMLElement::toNative(v8::Handle<v8::Object>::Cast(value)) : 0;
     ExceptionCode ec = 0;
     imp->setBody(WTF::getPtr(v), ec);
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.body set by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		imp->writeThirdPartyLog(toWrite);
+	}
     if (UNLIKELY(ec))
         V8Proxy::setDOMException(ec);
     return;
@@ -283,6 +295,12 @@ static v8::Handle<v8::Value> headAttrGetter(v8::Local<v8::String> name, const v8
 {
     INC_STATS("DOM.Document.head._get");
     Document* imp = V8Document::toNative(info.Holder());
+	if ((V8IsolatedContext::getThirdPartyId()!="")&&(V8IsolatedContext::getThirdPartyId()!=0))
+	{
+		String toWrite = "document.head read by ";
+		toWrite.append(V8IsolatedContext::getThirdPartyId());
+		imp->writeThirdPartyLog(toWrite);
+	}
     return toV8(imp->head());
 }
 
